@@ -159,6 +159,19 @@ export default function Timetable({
     p.calendar.holidays.join(", "),
   );
 
+  // Synchronize modal draft fields whenever modal opens or problem calendar updates
+  useEffect(() => {
+    if (calendarModal) {
+      setEditTermStart(p.calendar.term_start);
+      setEditTermEnd(p.calendar.term_end);
+      setEditMidtermStart(p.calendar.midterm_start || "");
+      setEditMidtermEnd(p.calendar.midterm_end || "");
+      setEditEndtermStart(p.calendar.endterm_start || "");
+      setEditEndtermEnd(p.calendar.endterm_end || "");
+      setEditHolidays(p.calendar.holidays.join(", "));
+    }
+  }, [calendarModal, p.calendar]);
+
   // Auto-dismiss feedback after 6 seconds
   useEffect(() => {
     if (feedback) {
@@ -576,18 +589,22 @@ export default function Timetable({
 
     const updatedCalendar: Problem["calendar"] = {
       ...p.calendar,
-      term_start: editTermStart,
-      term_end: editTermEnd,
-      midterm_start: editMidtermStart || null,
-      midterm_end: editMidtermEnd || null,
-      endterm_start: editEndtermStart || null,
-      endterm_end: editEndtermEnd || null,
+      term_start: editTermStart.trim(),
+      term_end: editTermEnd.trim(),
+      midterm_start: editMidtermStart.trim() || null,
+      midterm_end: editMidtermEnd.trim() || null,
+      endterm_start: editEndtermStart.trim() || null,
+      endterm_end: editEndtermEnd.trim() || null,
       holidays: holidaysList,
     };
 
     if (onUpdateCalendar) {
       onUpdateCalendar(updatedCalendar);
     }
+    setFeedback({
+      type: "success",
+      message: `✓ Academic calendar updated. Semester dates and exam windows recalculated.`,
+    });
     setCalendarModal(false);
   }
 

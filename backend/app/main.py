@@ -4,7 +4,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, Request, HTTPException, Depends
 from fastapi.responses import JSONResponse, StreamingResponse, Response
 from fastapi.staticfiles import StaticFiles
-from .schemas import Problem, Assignment
+from .schemas import Problem, Assignment, Calendar
 from .verifier import verify
 from .transit_adapter import adapt_transit
 from . import store, jobs
@@ -293,6 +293,17 @@ async def stream(id: str, request: Request, who=Depends(owner)):
     return StreamingResponse(
         events(), media_type="text/event-stream", headers={"Cache-Control": "no-cache"}
     )
+
+
+@app.post("/api/update-calendar")
+async def update_calendar(request: Request, who=Depends(owner)):
+    data = await body(request)
+    cal = data.get("calendar", data)
+    try:
+        validated = Calendar.model_validate(cal)
+        return {"status": "ok", "calendar": validated.model_dump()}
+    except Exception as e:
+        raise HTTPException(400, f"Invalid calendar: {e}")
 
 
 @app.post("/api/verify")
