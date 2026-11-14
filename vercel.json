@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm run build:local",
+  "outputDirectory": "dist-local",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

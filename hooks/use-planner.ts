@@ -27,11 +27,15 @@ export type History = {
 };
 export const initialProblem = ProblemSchema.parse(fixture);
 const initialResult = example as unknown as SolverResult;
+const API_BASE = (typeof import.meta !== "undefined" && (import.meta as any).env && (import.meta as any).env.VITE_API_BASE_URL)
+  ? String((import.meta as any).env.VITE_API_BASE_URL).replace(/\/$/, "")
+  : "";
+
 export async function api<T = unknown>(
   path: string,
   data?: unknown,
 ): Promise<T> {
-  const r = await fetch("/api/" + path, {
+  const r = await fetch(API_BASE + "/api/" + path, {
     method: data === undefined ? "GET" : "POST",
     headers: data === undefined ? {} : { "Content-Type": "application/json" },
     body: data === undefined ? undefined : JSON.stringify(data),
@@ -224,7 +228,7 @@ export function usePlanner() {
           message: "Queued for the local OR-Tools CP-SAT worker",
         });
         const received = new Set<number>();
-        const source = new EventSource(`/api/stream/${id}`);
+        const source = new EventSource(`${API_BASE}/api/stream/${id}`);
         eventStream.current = source;
         source.onmessage = (event) => {
           try {
