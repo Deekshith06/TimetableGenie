@@ -47,6 +47,231 @@ The private hosted application uses a bounded browser search engine and a server
    - 13 primary hard constraint categories (H1–H13) independently verified in both Python and TypeScript without accessing solver state.
    - Continuous recalculation of SHA-256 digests for problem revision, schedule assignment, and verification report.
 
+## Table of Contents
+
+- [Core Capabilities & Innovations](#core-capabilities--innovations)
+- [Advanced Workflow Charts](#advanced-workflow-charts)
+  - [Complete Platform Workflow](#complete-platform-workflow)
+  - [Interactive Drag-and-Drop, Pre-Drag Clash Matrix & Disruption Repair](#interactive-drag-and-drop-pre-drag-clash-matrix--disruption-repair)
+  - [Academic Semester Lifecycle & Real-Time IST State Machine](#academic-semester-lifecycle--real-time-ist-state-machine)
+  - [Multi-Tier Solver & Independent Verification Sequence](#multi-tier-solver--independent-verification-sequence)
+- [Technical Report & Research Manuscript](#technical-report--research-manuscript)
+- [Run the full local application](#run-the-full-local-application)
+- [PostgreSQL and Redis deployment configuration](#postgresql-and-redis-deployment-configuration)
+- [Use the planner](#use-the-planner)
+- [Reproduce a result without a server](#reproduce-a-result-without-a-server)
+- [What the certificate establishes](#what-the-certificate-establishes)
+- [Supported scope and limits](#supported-scope-and-limits)
+- [Tests and raw evidence](#tests-and-raw-evidence)
+- [Source map](#source-map)
+- [API entry points](#api-entry-points)
+
+---
+
+## Advanced Workflow Charts
+
+The timetabling lifecycle is strictly enforced across both client and server tiers. The React frontend handles real-time user gestures, pre-drag availability matrices, and dimensional drawings, while the backend and independent verification suites maintain authoritative control over constraint validation, schedule generation, disruption-aware repair, and cryptographic proof integrity.
+
+### Complete Platform Workflow
+
+```mermaid
+%%{init: {'theme': 'dark', 'themeVariables': {'background': '#0f0f11', 'primaryColor': '#1e1e24', 'primaryTextColor': '#f5f5f7', 'lineColor': '#8e8e93'}}}%%
+flowchart TD
+    START([User opens TimetableGenie]) --> AUTH{Authentication mode?}
+    AUTH -- Local Demo --> DEMO_BYPASS[ALLOW_DEMO_AUTH: loopback development bypass]
+    AUTH -- Production / Admin --> LOGIN[Enter administrator credentials]
+    LOGIN --> ARGON2{Verify Argon2id hash & session}
+    ARGON2 -- Invalid --> LOGIN_FAIL[HTTP 401 Unauthorized]
+    LOGIN_FAIL --> LOGIN
+    ARGON2 -- Valid --> SESSION_OK[Issue HttpOnly SameSite Strict session cookie]
+    DEMO_BYPASS --> DASHBOARD
+    SESSION_OK --> DASHBOARD[Open TimetableGenie Workspace]
+
+    DASHBOARD --> INGEST[Import academic dataset: courses, faculty, rooms, pathways, baskets]
+    INGEST --> VALIDATE{Pydantic schema validation}
+    VALIDATE -- Errors --> REJECT_DATA[Display validation diagnostics & line numbers]
+    REJECT_DATA --> INGEST
+    VALIDATE -- Valid --> REVISION[Generate immutable problem revision & SHA-256 digest]
+
+    REVISION --> CALENDAR_ENGINE[Configure 17-Week institutional semester calendar]
+    CALENDAR_ENGINE --> EXAM_SETUP[Codify Week 8 Mid-Term & Week 17 End-Term blackout windows]
+    EXAM_SETUP --> FORWARD_WEEK[Codify Week 16 active forward-planning teaching week]
+    FORWARD_WEEK --> LOCK_HISTORICAL[Apply retrospective lock on completed weeks W1–W11]
+    LOCK_HISTORICAL --> TELEMETRY_START[Initialize 1-second IST Asia/Kolkata live period sync]
+
+    TELEMETRY_START --> POLICY_INPUT{Custom natural-language rules?}
+    POLICY_INPUT -- Yes --> NL_PARSER[Stage 1: LocalNeuralConstraintLM multi-head neural parser]
+    NL_PARSER --> DYNAMIC_CONSTRAINTS[Emit validated DynamicConstraint objects]
+    POLICY_INPUT -- No --> SOLVER_CHOICE
+    DYNAMIC_CONSTRAINTS --> SOLVER_CHOICE{Select optimization engine}
+
+    SOLVER_CHOICE -- Local Backend --> CPSAT[Stage 2: Google OR-Tools CP-SAT Solver Service]
+    SOLVER_CHOICE -- Hosted Client --> WEB_WORKER[Stage 2: Browser Web Worker finite-domain search]
+
+    CPSAT --> SOLVE_EXEC[Encode H1–H13 hard rules + soft spread & workload objectives]
+    WEB_WORKER --> SOLVE_EXEC
+    SOLVE_EXEC --> SOLVER_STATUS{Solver outcome}
+
+    SOLVER_STATUS -- INFEASIBLE --> CONFLICT_CORE[Extract SufficientAssumptionsForInfeasibility cores]
+    CONFLICT_CORE --> EXPLAINER[LocalNeuralConflictExplainer: rank relaxation options]
+    EXPLAINER --> DASHBOARD
+
+    SOLVER_STATUS -- UNKNOWN --> TIMEOUT[Search budget exhausted: retain previous schedule]
+    TIMEOUT --> DASHBOARD
+
+    SOLVER_STATUS -- FEASIBLE / OPTIMAL --> RAW_SCHEDULE[Emit raw meeting assignment tuples]
+    RAW_SCHEDULE --> AUDIT_GATE{Algorithm 1 & 2: Independent Verification Engine}
+    AUDIT_GATE -- Violations / Missing Events --> AUDIT_FAIL[Reject schedule: preserve prior accepted state]
+    AUDIT_FAIL --> DASHBOARD
+
+    AUDIT_GATE -- 0 Hard Violations Passed --> ACCEPTED[Bind problem, schedule, and verification report]
+    ACCEPTED --> DIGEST[Compute versioned SHA-256 cryptographic proof digests]
+    DIGEST --> RENDER_GRID[Render dimensional timetable grid with 2-row navigator]
+
+    RENDER_GRID --> USER_ACTION{Planner interaction}
+    USER_ACTION -- Observe / Monitor --> LIVE_TELEMETRY[Highlight live-running period & display status badges]
+    USER_ACTION -- Drag Event Card --> DRAG_START[Trigger onDragStart pre-drag clash evaluation]
+    DRAG_START --> CLASH_MATRIX[Evaluate all grid cells across 5 hard constraint dimensions]
+    CLASH_MATRIX --> HIGHLIGHT[Illuminate valid-slot in green & clash-slot in red with tooltips]
+    HIGHLIGHT --> DROP_CARD[Drop into valid slot: initiate atomic move / repair]
+    DROP_CARD --> REPAIR_OPT[Dominance-weighted disruption repair: minimize changed tuples]
+    REPAIR_OPT --> RAW_SCHEDULE
+
+    USER_ACTION -- Export Schedule --> EXPORT_DISPATCH{Select export format}
+    EXPORT_DISPATCH -- CSV --> EXP_CSV[Generate sanitized CSV export]
+    EXPORT_DISPATCH -- Excel --> EXP_XLSX[Generate workbook XLSX archive]
+    EXPORT_DISPATCH -- PDF --> EXP_PDF[Generate formatted PDF timetable document]
+    EXPORT_DISPATCH -- iCalendar --> EXP_ICS[Generate UTC-anchored iCalendar with recurrence]
+    EXPORT_DISPATCH -- Audit Bundle --> EXP_JSON[Export cryptographic JSON proof bundle]
+
+    classDef client fill:#172554,stroke:#60a5fa,color:#eff6ff;
+    classDef solver fill:#3b0764,stroke:#c084fc,color:#faf5ff;
+    classDef audit fill:#052e16,stroke:#4ade80,color:#f0fdf4;
+    classDef state fill:#292524,stroke:#f59e0b,color:#fffbeb;
+    classDef danger fill:#450a0a,stroke:#f87171,color:#fef2f2;
+
+    class DASHBOARD,INGEST,CALENDAR_ENGINE,EXAM_SETUP,FORWARD_WEEK,LOCK_HISTORICAL,TELEMETRY_START,DRAG_START,CLASH_MATRIX,HIGHLIGHT,DROP_CARD client;
+    class CPSAT,WEB_WORKER,SOLVE_EXEC,REPAIR_OPT,NL_PARSER,DYNAMIC_CONSTRAINTS solver;
+    class AUDIT_GATE,ACCEPTED,DIGEST,AUDIT_FAIL,EXP_JSON audit;
+    class RENDER_GRID,LIVE_TELEMETRY,EXP_CSV,EXP_XLSX,EXP_PDF,EXP_ICS state;
+    class LOGIN_FAIL,REJECT_DATA,CONFLICT_CORE,TIMEOUT danger;
+```
+
+### Interactive Drag-and-Drop, Pre-Drag Clash Matrix & Disruption Repair
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+flowchart TD
+    DRAG_INIT([Planner initiates drag on scheduled meeting card]) --> EXTRACT[Extract event duration, room requirements, instructors, pathways]
+    EXTRACT --> PRE_EVAL[Pre-Drag Matrix: evaluate all candidate week cells d, p]
+
+    subgraph PreDragChecks [Real-Time 5-Dimension Admissibility Check]
+        PRE_EVAL --> C1{Exam blackout week?}
+        C1 -- Yes --> MARK_RED[Mark cell as clash-slot: Exam Period Suspended]
+        C1 -- No --> C2{Completed historical date?}
+        C2 -- Yes --> MARK_RED2[Mark cell as clash-slot: Historical Date Locked]
+        C2 -- No --> C3{Room or faculty double-booked?}
+        C3 -- Yes --> MARK_RED3[Mark cell as clash-slot: Resource Conflict Tooltip]
+        C3 -- No --> C4{Student pathway collision?}
+        C4 -- Yes --> MARK_RED4[Mark cell as clash-slot: Pathway Overlap Tooltip]
+        C4 -- No --> C5{Lunch break cross or capacity violation?}
+        C5 -- Yes --> MARK_RED5[Mark cell as clash-slot: Break / Capacity Violation]
+        C5 -- No --> MARK_GREEN[Mark cell as valid-slot: Green dashed border]
+    end
+
+    MARK_GREEN & MARK_RED & MARK_RED2 & MARK_RED3 & MARK_RED4 & MARK_RED5 --> HOVER[Render visual availability overlay on grid in real time]
+    HOVER --> DROP_EVENT{Planner drops card into slot}
+    DROP_EVENT -- Dropped into clash-slot --> REVERT[Reject move: smooth snapback animation to original cell]
+    DROP_EVENT -- Dropped into valid-slot --> ATOMIC_REQ[Dispatch POST /api/move-slot with locked tuple]
+
+    ATOMIC_REQ --> REPAIR_ENGINE[Dominance-Weighted Disruption Repair Engine]
+    REPAIR_ENGINE --> OBJECTIVE[Minimize: 10000 × changed_tuples + standard_quality_penalty]
+    OBJECTIVE --> RUN_CPSAT[OR-Tools CP-SAT computes minimal adjustment schedule]
+    RUN_CPSAT --> RE_VERIFY[Independent Verifier: re-audit all 13 hard rule categories]
+    RE_VERIFY -- Audit Passed --> LIVE_UPDATE[Update timetable grid + recompute SHA-256 digest]
+    RE_VERIFY -- Audit Failed --> ROLLBACK[Preserve previously accepted timetable + show alert]
+```
+
+### Academic Semester Lifecycle & Real-Time IST State Machine
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+stateDiagram-v2
+    [*] --> SemesterConfigured: Academic Calendar Ingestion (3 Aug – 27 Nov 2026)
+
+    SemesterConfigured --> HistoricalWeeks: Weeks 1 to 11
+    note right of HistoricalWeeks
+        Retrospectively locked
+        Completed status badge
+        Editing disabled to preserve attendance logs
+    end note
+
+    SemesterConfigured --> ActiveTeachingWeeks: Weeks 12 to 16
+    note right of ActiveTeachingWeeks
+        Active instruction & forward planning
+        Pre-drag availability matrix enabled
+        Week 16 dedicated to syllabus completion
+    end note
+
+    SemesterConfigured --> MidTermExam: Week 8 (21–25 Sep 2026)
+    SemesterConfigured --> EndTermExam: Week 17 (23–27 Nov 2026)
+    note right of EndTermExam
+        Dual exam blackout windows
+        Regular classes suspended
+        Locked against class placement
+    end note
+
+    state ActiveTeachingWeeks {
+        [*] --> BeforeHours: Time < 08:30 IST
+        BeforeHours --> ClassInSession: Period 0 Starts (08:30 IST)
+        ClassInSession --> PeriodTransition: Period End
+        PeriodTransition --> ClassInSession: Next Period Starts
+        PeriodTransition --> LunchBreak: 12:30–13:30 IST
+        LunchBreak --> ClassInSession: Afternoon Period Resumes
+        ClassInSession --> ClassesConcluded: Time >= 17:30 IST
+        ClassesConcluded --> [*]
+    }
+```
+
+### Multi-Tier Solver & Independent Verification Sequence
+
+```mermaid
+%%{init: {'theme': 'dark'}}%%
+sequenceDiagram
+    autonumber
+    actor Planner as Timetable Planner
+    participant UI as React 19 Client
+    participant API as FastAPI Gateway
+    participant Solver as OR-Tools CP-SAT
+    participant Verifier as Independent Verifier
+    participant Store as Persistent SQL DB
+
+    Planner->>UI: Selects dataset and clicks "Solve Timetable"
+    UI->>API: POST /api/solve/nep-direct (with seconds budget & policies)
+    API->>Store: Create pending Job record (UUID)
+    API-->>UI: Return 202 Accepted (job_id)
+
+    loop Server-Sent Events / Polling
+        UI->>API: GET /api/stream/{job_id} or /api/jobs/{job_id}
+        API-->>UI: Emit progress telemetry (node count, bound, elapsed ms)
+    end
+
+    API->>Solver: Initialize model with H1–H13 constraints & placement domains
+    Solver->>Solver: Search within time budget (branch-and-cut)
+    Solver-->>API: Return status (OPTIMAL/FEASIBLE) + raw assignment tuples
+
+    API->>Verifier: Execute verify_timetable(problem_revision, raw_assignments)
+    Note over Verifier: Reconstructs occupied intervals independently without solver state
+    Verifier->>Verifier: Check 13 rule groups, room capacities, lunch breaks, and locks
+    Verifier-->>API: Audit PASS (0 violations) + SHA-256 certificate
+
+    API->>Store: Persist accepted schedule, audit certificate, and digests
+    API-->>UI: Job COMPLETED: accepted schedule & cryptographic proof digests
+    UI->>Planner: Displays clash-free timetable grid with dimensional annotations
+```
+
+---
+
 ## Run the full local application
 
 Requirements: Python3.12, Node24 and pnpm11.25.0. From this directory:
