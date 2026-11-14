@@ -59,7 +59,7 @@ export default function Timetable({
       const termStart = new Date(p.calendar.term_start + "T00:00:00Z");
       const diffMs = istDate.getTime() - termStart.getTime();
       const diffWeeks = Math.floor(diffMs / (7 * 24 * 60 * 60 * 1000));
-      const totalW = p.calendar.total_weeks || 17;
+      const totalW = (p.calendar as any).total_weeks || 17;
 
       const dayOfWeek = istDate.getDay(); // 0=Sunday, 6=Saturday
       const isCompletedWeekend = dayOfWeek === 0 || dayOfWeek === 6;
@@ -509,14 +509,14 @@ export default function Timetable({
             return (
               oEv &&
               oEv.course_id === ev.course_id &&
-              oEv.section === ev.section &&
+              oEv.section_id === ev.section_id &&
               oEv.kind === "L"
             );
           });
           if (sectionLecturesOnDay.length >= 1) {
             availability[slotKey] = {
               valid: false,
-              reason: `Theory spread (H11): Section ${ev.section} already has a lecture on ${p.calendar.days[d]}.`,
+              reason: `Theory spread (H11): Section ${ev.section_id} already has a lecture on ${p.calendar.days[d]}.`,
             };
             continue;
           }
@@ -735,7 +735,11 @@ export default function Timetable({
           {week === 14 && (
             <span
               className={`today-ist-badge ${isLiveActive ? "live-active" : "weekend-idle"}`}
-              title={liveStatusText}
+              title={
+                isLiveActive
+                  ? "Currently active class in progress according to Indian Standard Time"
+                  : "Completed Week (9–13 Nov 2026) · Weekend off-hours"
+              }
             >
               {isLiveActive ? "● Active In-Session · IST" : "Completed Week (9–13 Nov) · Weekend"}
             </span>
