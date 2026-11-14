@@ -3,7 +3,6 @@ node_modules
 .sites-runtime
 .wrangler
 dist
-dist-local
 outputs
 *.db
 *.db-shm
