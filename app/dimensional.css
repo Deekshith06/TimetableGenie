@@ -495,9 +495,26 @@ body {
   border-color: #d5d5d5;
   color: #767676;
 }
+.time-heading,
+.day-heading {
+  height: 48px;
+  min-height: 48px;
+  max-height: 48px;
+  box-sizing: border-box;
+}
 .time-heading {
   font-family: ui-monospace, monospace;
   font-size: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.day-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
 }
 .day-heading > span {
   font-family: ui-monospace, monospace;
@@ -1511,20 +1528,29 @@ a:focus-visible {
 /* Semester Navigator Bar */
 .semester-navigator-bar {
   display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #fbfbfb;
+  border-bottom: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  min-height: 82px;
+}
+
+.navigator-top-row {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 10px 16px;
-  background: #fbfbfb;
-  border-bottom: 1px solid #e5e5e5;
-  flex-wrap: wrap;
+  width: 100%;
+  min-height: 28px;
 }
 
 .navigator-left {
   display: flex;
   align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
+  gap: 10px;
+  flex-wrap: nowrap;
 }
 
 .week-stepper {
@@ -1595,15 +1621,17 @@ a:focus-visible {
   border: 1px solid #c4b5fd;
 }
 
-/* Week Strip Scroll (W1 to W16) */
+/* Week Strip Scroll (W1 to W17) */
 .week-strip-scroll {
   display: flex;
   align-items: center;
   gap: 4px;
   overflow-x: auto;
-  max-width: 520px;
-  padding: 4px 2px;
+  width: 100%;
+  max-width: 100%;
+  padding: 2px 0;
   scrollbar-width: thin;
+  min-height: 36px;
 }
 
 .week-pill {

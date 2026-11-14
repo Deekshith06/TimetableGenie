@@ -694,77 +694,88 @@ export default function Timetable({
         </div>
       </div>
 
-      {/* Full-Semester Academic Week Navigator */}
+      {/* Full-Semester Academic Week Navigator - Fixed 2-Row Consistent Layout */}
       <div className="semester-navigator-bar">
-        <div className="navigator-left">
-          <div className="week-stepper">
-            <button
-              aria-label="Previous academic week"
-              disabled={week === 0}
-              onClick={() => setWeek((n) => Math.max(0, n - 1))}
-              className="stepper-btn"
-            >
-              <ChevronLeft size={16} />
-            </button>
-            <span className="current-week-label">
-              Week {currentWeekInfo.weekNumber} of {totalWeeks}
+        <div className="navigator-top-row">
+          <div className="navigator-left">
+            <div className="week-stepper">
+              <button
+                aria-label="Previous academic week"
+                disabled={week === 0}
+                onClick={() => setWeek((n) => Math.max(0, n - 1))}
+                className="stepper-btn"
+              >
+                <ChevronLeft size={16} />
+              </button>
+              <span className="current-week-label">
+                Week {currentWeekInfo.weekNumber} of {totalWeeks}
+              </span>
+              <button
+                aria-label="Next academic week"
+                disabled={week >= totalWeeks - 1}
+                onClick={() => setWeek((n) => Math.min(totalWeeks - 1, n + 1))}
+                className="stepper-btn"
+              >
+                <ChevronRight size={16} />
+              </button>
+            </div>
+            <span className="week-dates-range">
+              {firstDateOfWeek.toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "short",
+                timeZone: "UTC",
+              })}{" "}
+              –{" "}
+              {datesOfWeek[datesOfWeek.length - 1].toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+                timeZone: "UTC",
+              })}
             </span>
-            <button
-              aria-label="Next academic week"
-              disabled={week >= totalWeeks - 1}
-              onClick={() => setWeek((n) => Math.min(totalWeeks - 1, n + 1))}
-              className="stepper-btn"
-            >
-              <ChevronRight size={16} />
-            </button>
+            {week === 14 && (
+              <span
+                className={`today-ist-badge ${isLiveActive ? "live-active" : "weekend-idle"}`}
+                title={
+                  isLiveActive
+                    ? "Currently active class in progress according to Indian Standard Time"
+                    : "Completed Week (9–13 Nov 2026) · Weekend off-hours"
+                }
+              >
+                {isLiveActive ? "● Active In-Session · IST" : "Completed Week (9–13 Nov)"}
+              </span>
+            )}
+            {week === 15 && (
+              <span
+                className="today-ist-badge live-active"
+                title="Next active teaching week (16 Nov – 20 Nov 2026) · Ready for planning"
+              >
+                ★ Active Planning Week
+              </span>
+            )}
+            {currentWeekInfo.isMidterm && (
+              <span className="phase-pill midterm-phase">
+                <AlertTriangle size={11} /> Mid-Term Exams
+              </span>
+            )}
+            {currentWeekInfo.isEndterm && (
+              <span className="phase-pill endterm-phase">
+                <AlertTriangle size={11} /> End-Term Exams
+              </span>
+            )}
           </div>
-          <span className="week-dates-range">
-            {firstDateOfWeek.toLocaleDateString("en-GB", {
-              day: "numeric",
-              month: "short",
-              timeZone: "UTC",
-            })}{" "}
-            –{" "}
-            {datesOfWeek[datesOfWeek.length - 1].toLocaleDateString("en-GB", {
-              day: "numeric",
-              month: "short",
-              year: "numeric",
-              timeZone: "UTC",
-            })}
-          </span>
-          {week === 14 && (
-            <span
-              className={`today-ist-badge ${isLiveActive ? "live-active" : "weekend-idle"}`}
-              title={
-                isLiveActive
-                  ? "Currently active class in progress according to Indian Standard Time"
-                  : "Completed Week (9–13 Nov 2026) · Weekend off-hours"
-              }
-            >
-              {isLiveActive ? "● Active In-Session · IST" : "Completed Week (9–13 Nov) · Weekend"}
-            </span>
-          )}
-          {week === 15 && (
-            <span
-              className="today-ist-badge live-active"
-              title="Next active teaching week (16 Nov – 20 Nov 2026) · Ready for planning"
-            >
-              ★ Upcoming Active Week · Forward Planning
-            </span>
-          )}
-          {currentWeekInfo.isMidterm && (
-            <span className="phase-pill midterm-phase">
-              <AlertTriangle size={11} /> Mid-Term Exams
-            </span>
-          )}
-          {currentWeekInfo.isEndterm && (
-            <span className="phase-pill endterm-phase">
-              <AlertTriangle size={11} /> End-Term Exams
-            </span>
-          )}
+
+          <button
+            className="calendar-settings-btn"
+            onClick={() => setCalendarModal(true)}
+            title="Configure semester term dates and exam windows"
+          >
+            <Settings size={14} />
+            <span>Dates & Exams</span>
+          </button>
         </div>
 
-        {/* Scrollable Semester Week Pills (Week 1 to 16/18) */}
+        {/* Scrollable Semester Week Pills (Week 1 to 17) */}
         <div className="week-strip-scroll" role="tablist" aria-label="Academic semester weeks">
           {semesterWeeks.map((sw) => {
             const isActive = week === sw.index;
@@ -791,15 +802,6 @@ export default function Timetable({
             );
           })}
         </div>
-
-        <button
-          className="calendar-settings-btn"
-          onClick={() => setCalendarModal(true)}
-          title="Configure semester term dates and exam windows"
-        >
-          <Settings size={14} />
-          <span>Dates & Exams</span>
-        </button>
       </div>
 
       {/* Exam Banner Warning when active week is an exam period */}
