@@ -32,7 +32,35 @@ class LoginSession(Base):
     expires: Mapped[float] = mapped_column(Float)
 
 
-DB_URL = os.environ.get("DATABASE_URL", "sqlite:///./timetablegenie.db")
+def _get_db_url() -> str:
+    url = os.environ.get("DATABASE_URL")
+    if url:
+        return url
+    if os.path.isdir("/app/data") and os.access("/app/data", os.W_OK):
+        return "sqlite:////app/data/timetablegenie.db"
+    try:
+        test_file = Path("./.perm_test")
+        test_file.touch()
+        test_file.unlink()
+        return "sqlite:///./timetablegenie.db"
+    except Exception:
+        return "sqlite:////tmp/timetablegenie.db"
+
+
+DB_URL = _get_db_url()
+
+# Ensure parent directory exists for SQLite
+if DB_URL.startswith("sqlite:////"):
+    try:
+        Path(DB_URL[len("sqlite:////") - 1:]).parent.mkdir(parents=True, exist_ok=True)
+    except Exception:
+        pass
+elif DB_URL.startswith("sqlite:///"):
+    try:
+        Path(DB_URL[len("sqlite:///"):]).parent.mkdir(parents=True, exist_ok=True)
+    except Exception:
+        pass
+
 engine = create_engine(
     DB_URL,
     connect_args=(
@@ -46,11 +74,24 @@ hasher = PasswordHasher(time_cost=3, memory_cost=65536, parallelism=2)
 
 
 def initialize():
-    Base.metadata.create_all(engine)
-    if DB_URL.startswith("sqlite"):
-        with engine.connect() as c:
-            c.execute(text("PRAGMA journal_mode=WAL"))
-            c.commit()
+    global engine, DB_URL
+    try:
+        Base.metadata.create_all(engine)
+        if DB_URL.startswith("sqlite"):
+            with engine.connect() as c:
+                c.execute(text("PRAGMA journal_mode=WAL"))
+                c.commit()
+    except Exception as e:
+        if "unable to open database file" in str(e) or "permission" in str(e).lower():
+            DB_URL = "sqlite:////tmp/timetablegenie.db"
+            engine = create_engine(
+                DB_URL,
+                connect_args={"check_same_thread": False, "timeout": 30},
+                pool_pre_ping=True,
+            )
+            Base.metadata.create_all(engine)
+        else:
+            raise
     password = os.environ.get("ADMIN_PASSWORD")
     if password:
         email = os.environ.get("ADMIN_EMAIL", "admin@local.test")

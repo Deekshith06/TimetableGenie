@@ -8,6 +8,8 @@ services:
     envVars:
       - key: ALLOW_DEMO_AUTH
         value: "true"
+      - key: DATABASE_URL
+        value: "sqlite:////app/data/timetablegenie.db"
       - key: SESSION_COOKIE_SECURE
         value: "false"
       - key: FRONTEND_DIST

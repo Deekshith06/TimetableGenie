@@ -17,11 +17,12 @@ COPY datasets /app/datasets
 COPY dist-local /app/dist-local
 COPY public /app/public
 
-# Prepare persistent data directory
-RUN mkdir -p /app/data && chown -R planner:planner /app/data
+# Prepare persistent data directory and grant permissions
+RUN mkdir -p /app/data && chown -R planner:planner /app && chmod -R 775 /app
 
 USER planner
 
+ENV DATABASE_URL="sqlite:////app/data/timetablegenie.db"
 ENV FRONTEND_DIST=/app/dist-local
 ENV ALLOW_DEMO_AUTH=true
 ENV PYTHONUNBUFFERED=1
