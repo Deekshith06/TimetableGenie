@@ -1,8 +1,51 @@
 # TimetableGenie
 
-A working multidisciplinary weekly-timetable planner with real constraint solving, independently reconstructed audits, explicit student selections and measurable disruption repair. The frontend follows the monochrome dimensional-drawing reference requested for this project.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/)
+[![React 19](https://img.shields.io/badge/React-19-61dafb.svg)](https://react.dev/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688.svg)](https://fastapi.tiangolo.com/)
+[![OR-Tools CP-SAT](https://img.shields.io/badge/Solver-OR--Tools%20CP--SAT-red.svg)](https://developers.google.com/optimization)
+[![Technical Report](https://img.shields.io/badge/Academic%20Report-PDF-red.svg)](docs/report/TimetableGenie_Report.pdf)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-black.svg)](https://timetablegenie.vercel.app)
 
-The private hosted application uses a bounded browser search engine and a server-side independent verifier. The supplied local application uses OR-Tools CP-SAT, FastAPI and the same React interface. Python is not claimed to run inside the hosted Worker.
+**Author:** Seelaboyina Deekshith ([@Deekshith06](https://github.com/Deekshith06))  
+**Academic Affiliation:** Department of Computer Science and Engineering  
+**Smart India Hackathon:** Problem Statement SIH25091 (Multidisciplinary University Timetable Planner)
+
+---
+
+## Technical Report & Research Manuscript
+The comprehensive academic research paper and technical report is available in Springer Nature format:
+- **Compiled PDF Report:** [**`docs/report/TimetableGenie_Report.pdf`**](docs/report/TimetableGenie_Report.pdf)
+- **Full LaTeX Source Code:** [**`docs/report/TimetableGenie_Report.tex`**](docs/report/TimetableGenie_Report.tex)
+- **Report Documentation:** [**`docs/report/README.md`**](docs/report/README.md)
+
+---
+
+A working multidisciplinary weekly-timetable planner with real constraint solving, independently reconstructed audits, explicit student selections and measurable disruption repair. The frontend follows an architectural monochrome dimensional-drawing design system.
+
+The private hosted application uses a bounded browser search engine and a server-side independent verifier. The supplied local application uses OR-Tools CP-SAT, FastAPI and the same React interface.
+
+### Core Capabilities & Innovations
+1. **Full-Semester 17-Week Calendar Engine (Weeks 1–17):**
+   - Configures the institutional calendar spanning 3 August 2026 to 27 November 2026.
+   - Dual Exam Blackout Windows: Week 8 Mid-Term (21–25 Sep 2026) and Week 17 End-Term (23–27 Nov 2026) suspend instruction and lock slots against scheduling.
+   - Active Teaching Forward-Planning: Week 16 (16–20 Nov 2026) operates as a full teaching week for syllabus completion and laboratory revision before End-Term exams.
+2. **Retrospective Completed-Date Locks & Immutability:**
+   - Historical weeks (Weeks 1–11) and past dates are immutably locked with a `Completed` status badge.
+   - Prevents retroactive corruption of past lecture logs while allowing agile schedule adjustments in active and upcoming weeks (Weeks 12–16).
+3. **Real-Time Indian Standard Time (IST) Class Telemetry:**
+   - 1-second continuous auto-sync against `Asia/Kolkata` (UTC+05:30) wall-clock time.
+   - Evaluates active teaching periods (Periods 0–7) and highlights running classes (`live-running`) with status badges (*In Session*, *Break*, *Classes Concluded for Today*).
+4. **Zero-Layout-Shift Fixed 2-Row Semester Navigator:**
+   - Permanent 2-row navigation architecture preventing cumulative layout shift ($\text{CLS}=0$) between standard, break, and examination weeks.
+   - Dedicated row 1 for stepper controls, date range indicators, compact status badges, and "Dates & Exams" modal triggers; dedicated row 2 for horizontal W1–W17 pills.
+5. **Pre-Drag Availability Highlighting Matrix:**
+   - Evaluates all grid cells $(d, p)$ on drag-start against 5 hard constraint dimensions (room occupancy, instructor availability, student pathways, lunch break continuity, and exam suspensions).
+   - Valid clash-free slots glow green dashed borders (`valid-slot`); clashing slots glow red dashed borders (`clash-slot`) with precise hover tooltips.
+6. **Independent Auditing & Cryptographic Integrity:**
+   - 13 primary hard constraint categories (H1–H13) independently verified in both Python and TypeScript without accessing solver state.
+   - Continuous recalculation of SHA-256 digests for problem revision, schedule assignment, and verification report.
 
 ## Run the full local application
 
