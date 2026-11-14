@@ -1,0 +1,707 @@
+{
+  "review_date": "2026-10-30",
+  "window_start": "2016-10-30",
+  "window_end": "2026-10-30",
+  "selection_rule": "Earliest known online publication in window; if unavailable, official proceedings publication year. Year precision is explicitly limited where exact day was not verified.",
+  "scope": "Targeted engineering evidence review, not an exhaustive or PRISMA systematic review.",
+  "papers": [
+    {
+      "id": "P01",
+      "title": "University course timetabling and International Timetabling Competition 2019",
+      "authors": [
+        "Tomáš Müller",
+        "Hana Rudová",
+        "Zuzana Müllerová"
+      ],
+      "year": 2018,
+      "venue": "PATAT 2018",
+      "url": "https://www.unitime.cz/papers/itc2019-patat2018.pdf",
+      "doi": null,
+      "kind": "research_paper",
+      "access": "official_author_pdf",
+      "family": "itc2019_problem",
+      "first_online": null,
+      "verified_on": "2026-10-30",
+      "claim": "Defines a richer university problem combining room/time assignment with student sectioning.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P02",
+      "title": "Real-world university course timetabling at the International Timetabling Competition 2019",
+      "authors": [
+        "Tomáš Müller",
+        "Hana Rudová",
+        "Zuzana Müllerová"
+      ],
+      "year": 2025,
+      "venue": "Journal of Scheduling 28, 247–267",
+      "url": "https://link.springer.com/article/10.1007/s10951-023-00801-w",
+      "doi": "10.1007/s10951-023-00801-w",
+      "kind": "research_paper",
+      "access": "open_access_publisher_full_text",
+      "family": "itc2019_problem",
+      "first_online": "2024-04-12",
+      "verified_on": "2026-10-30",
+      "claim": "Describes real institutional instances, solver comparisons, and available solution validation.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P03",
+      "title": "A mixed-integer programming approach for solving university course timetabling problems",
+      "authors": [
+        "Efstratios Rappos",
+        "Eric Thiémard",
+        "Stephan Robert",
+        "Jean-François Hêche"
+      ],
+      "year": 2022,
+      "venue": "Journal of Scheduling 25, 391–404",
+      "url": "https://link.springer.com/article/10.1007/s10951-021-00715-5",
+      "doi": "10.1007/s10951-021-00715-5",
+      "kind": "research_paper",
+      "access": "open_access_publisher_full_text",
+      "family": "P03",
+      "first_online": "2022-02-15",
+      "verified_on": "2026-10-30",
+      "claim": "Uses an initial-feasibility stage followed by MIP-based improvement for ITC2019.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P04",
+      "title": "Flow formulations for curriculum-based course timetabling",
+      "authors": [
+        "Niels-Christian F. Bagger",
+        "Simon Kristiansen",
+        "Matias Sørensen",
+        "Thomas R. Stidsen"
+      ],
+      "year": 2019,
+      "venue": "Annals of Operations Research 280, 121–150",
+      "url": "https://link.springer.com/article/10.1007/s10479-018-3096-4",
+      "doi": "10.1007/s10479-018-3096-4",
+      "kind": "research_paper",
+      "access": "publisher_metadata_and_abstract",
+      "family": "P04",
+      "first_online": "2018-11-12",
+      "verified_on": "2026-10-30",
+      "claim": "Studies flow-based MIP formulations and lower bounds; useful as a formulation alternative.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P05",
+      "title": "A fix-and-optimize matheuristic for university timetabling",
+      "authors": [
+        "Michael Lindahl",
+        "Matias Sørensen",
+        "Thomas R. Stidsen"
+      ],
+      "year": 2018,
+      "venue": "Journal of Heuristics 24, 645–665",
+      "url": "https://link.springer.com/article/10.1007/s10732-018-9371-3",
+      "doi": "10.1007/s10732-018-9371-3",
+      "kind": "research_paper",
+      "access": "publisher_metadata_and_abstract",
+      "family": "P05",
+      "first_online": "2018-04-04",
+      "verified_on": "2026-10-30",
+      "claim": "Fixes subsets of variables and uses MIP to improve neighborhoods; not a universal superiority result.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P06",
+      "title": "Quality recovering of university timetables",
+      "authors": [
+        "Michael Lindahl",
+        "Thomas Jacob Riis Stidsen",
+        "Matias Sørensen"
+      ],
+      "year": 2019,
+      "venue": "European Journal of Operational Research 276(2), 422–435",
+      "url": "https://orbit.dtu.dk/en/publications/quality-recovering-of-university-timetables/",
+      "doi": "10.1016/j.ejor.2019.01.026",
+      "kind": "research_paper",
+      "access": "author_institution_metadata_and_abstract",
+      "family": "P06",
+      "first_online": null,
+      "verified_on": "2026-10-30",
+      "claim": "Studies the trade-off between changed assignments and post-disruption timetable quality.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P07",
+      "title": "A Strategic View of University Timetabling",
+      "authors": [
+        "Michael Lindahl",
+        "Andrew Mason",
+        "Thomas Jacob Riis Stidsen",
+        "Matias Sørensen"
+      ],
+      "year": 2018,
+      "venue": "European Journal of Operational Research 266(1), 35–45",
+      "url": "https://orbit.dtu.dk/en/publications/a-strategic-view-of-university-timetabling/",
+      "doi": "10.1016/j.ejor.2017.09.022",
+      "kind": "research_paper",
+      "access": "author_institution_metadata_and_abstract",
+      "family": "P07",
+      "first_online": null,
+      "verified_on": "2026-10-30",
+      "claim": "Models trade-offs between available rooms, teaching periods, and timetable quality.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P08",
+      "title": "Exact and heuristic methods for a university course scheduling problem",
+      "authors": [
+        "Kewei Xiang",
+        "Xinyao Hu",
+        "Mingzheng Yu",
+        "Xingyu Wang"
+      ],
+      "year": 2024,
+      "venue": "Expert Systems with Applications 248, 123383",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0957417424002483",
+      "doi": "10.1016/j.eswa.2024.123383",
+      "kind": "research_paper",
+      "access": "publisher_indexed_metadata_and_abstract; direct_full_page_access_limited",
+      "family": "P08",
+      "first_online": null,
+      "verified_on": "2026-10-30",
+      "claim": "Combines a mathematical formulation with graph-coloring/genetic and tabu-search stages for a case study.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P09",
+      "title": "Introducing UniCorT: an iterative university course timetabling tool with MaxSAT",
+      "authors": [
+        "Alexandre Lemos",
+        "Pedro T. Monteiro",
+        "Inês Lynce"
+      ],
+      "year": 2022,
+      "venue": "Journal of Scheduling 25, 371–390",
+      "url": "https://link.springer.com/article/10.1007/s10951-021-00695-6",
+      "doi": "10.1007/s10951-021-00695-6",
+      "kind": "research_paper",
+      "access": "publisher_metadata_and_abstract",
+      "family": "P09",
+      "first_online": "2021-07-23",
+      "verified_on": "2026-10-30",
+      "claim": "Combines preprocessing, MaxSAT encodings, and local improvement on ITC2019 instances.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P10",
+      "title": "Daily course pattern formulation and valid inequalities for the curriculum-based course timetabling problem",
+      "authors": [
+        "Niels-Christian Fink Bagger",
+        "Guy Desaulniers",
+        "Jacques Desrosiers"
+      ],
+      "year": 2019,
+      "venue": "Journal of Scheduling 22, 155–172",
+      "url": "https://link.springer.com/article/10.1007/s10951-018-0582-0",
+      "doi": "10.1007/s10951-018-0582-0",
+      "kind": "research_paper",
+      "access": "publisher_metadata_and_abstract",
+      "family": "P10",
+      "first_online": "2018-08-18",
+      "verified_on": "2026-10-30",
+      "claim": "Uses daily patterns, preprocessing, and valid inequalities to strengthen lower bounds.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P11",
+      "title": "Curriculum-Based Course Timetabling with Student Flow, Soft Constraints, and Smoothing Objectives: an Application to a Real Case Study",
+      "authors": [
+        "Massimiliano Caramia",
+        "Stefano Giordani"
+      ],
+      "year": 2020,
+      "venue": "Operations Research Forum 1, article 11",
+      "url": "https://link.springer.com/article/10.1007/s43069-020-0013-x",
+      "doi": "10.1007/s43069-020-0013-x",
+      "kind": "case_report",
+      "access": "publisher_metadata_and_abstract",
+      "family": "P11",
+      "first_online": "2020-04-29",
+      "verified_on": "2026-10-30",
+      "claim": "Models student movement, compulsory/noncompulsory conflict penalties, and weekday smoothing in a case study.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P12",
+      "title": "New Constraints and Features for the University Course Timetabling Problem",
+      "authors": [
+        "M. Aschinger",
+        "S. Applebee",
+        "A. Bucur",
+        "H. Edmonds",
+        "P. Hungerländer",
+        "K. Maier"
+      ],
+      "year": 2017,
+      "venue": "Operations Research Proceedings 2016, 95–101",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-319-55702-1_14",
+      "doi": "10.1007/978-3-319-55702-1_14",
+      "kind": "conference_paper",
+      "access": "publisher_metadata_and_abstract",
+      "family": "P12",
+      "first_online": "2017-07-21",
+      "verified_on": "2026-10-30",
+      "claim": "Extends a benchmark model to multiple term weeks and a timetable regularity measure.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P13",
+      "title": "An Online Learning Selection Hyper-heuristic for Educational Timetabling",
+      "authors": [
+        "Alexander Steenson",
+        "Ender Özcan",
+        "Ahmed Kheiri",
+        "Barry McCollum",
+        "Paul McMullan"
+      ],
+      "year": 2020,
+      "venue": "PATAT 2021 Volume I (published 2020), 129–146",
+      "url": "https://www.patatconference.org/patat2020/proceedings/papers/10.%20PATAT_2020_paper_59.pdf",
+      "doi": null,
+      "kind": "conference_paper",
+      "access": "official_proceedings_pdf",
+      "family": "P13",
+      "first_online": null,
+      "verified_on": "2026-10-30",
+      "claim": "Adapts sequences of low-level heuristics through learned transition probabilities.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P14",
+      "title": "Slack-based Robustness Estimators for the Curriculum-Based Course Timetabling Problem",
+      "authors": [
+        "Can Akkan",
+        "Ayla Gülcü",
+        "Zeki Kuş"
+      ],
+      "year": 2020,
+      "venue": "PATAT 2021 Volume I (published 2020), 147–158",
+      "url": "https://www.patatconference.org/patat2020/proceedings/papers/11.%20PATAT_2020_paper_18.pdf",
+      "doi": null,
+      "kind": "conference_paper",
+      "access": "official_proceedings_pdf",
+      "family": "P14",
+      "first_online": null,
+      "verified_on": "2026-10-30",
+      "claim": "Studies inexpensive slack-based estimates of robustness; estimates are not guarantees.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P15",
+      "title": "Scheduling Bus Drivers in Real-Life Multi-Objective Scenarios with Break Constraints",
+      "authors": [
+        "Lucas Kletzander",
+        "Nysret Musliu"
+      ],
+      "year": 2020,
+      "venue": "PATAT 2021 Volume I (published 2020), 34–40",
+      "url": "https://www.patatconference.org/patat2020/proceedings/papers/4.%20PATAT_2020_paper_51.pdf",
+      "doi": null,
+      "kind": "extended_abstract",
+      "access": "official_proceedings_pdf",
+      "family": "P15",
+      "first_online": null,
+      "verified_on": "2026-10-30",
+      "claim": "Shows why actual transit scheduling contains spatial and break constraints beyond generic resource overlap.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P16",
+      "title": "Simulated Annealing with Penalization for University Course Timetabling",
+      "authors": [
+        "Edon Gashi",
+        "Kadri Sylejmani",
+        "Adrian Ymeri"
+      ],
+      "year": 2021,
+      "venue": "PATAT 2021 Volume II, 361–366",
+      "url": "https://www.patatconference.org/patat2020/proceedings/papers/29.PATAT_2020_v2_paper_10.pdf",
+      "doi": null,
+      "kind": "conference_paper",
+      "access": "official_proceedings_pdf",
+      "family": "P16",
+      "first_online": null,
+      "verified_on": "2026-10-30",
+      "claim": "Uses adaptive penalties and simulated annealing for ITC2019 scheduling.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P17",
+      "title": "REDOSPLAT DSL for timetabling requirements",
+      "authors": [
+        "Razija Turčinhodžić Mulahasanović",
+        "Samir Ribić"
+      ],
+      "year": 2021,
+      "venue": "PATAT 2021 Volume II, 398–402",
+      "url": "https://www.patatconference.org/patat2020/proceedings/papers/34.PATAT_2020_v2_paper_24.pdf",
+      "doi": null,
+      "kind": "conference_paper",
+      "access": "official_proceedings_pdf",
+      "family": "P17",
+      "first_online": null,
+      "verified_on": "2026-10-30",
+      "claim": "Describes a human-oriented requirements language with resources, concurrency, and travel constraints.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P18",
+      "title": "Student Scheduling at Purdue University",
+      "authors": [
+        "Tomáš Müller"
+      ],
+      "year": 2024,
+      "venue": "PATAT 2024",
+      "url": "https://www.unitime.cz/papers/patat24.pdf",
+      "doi": null,
+      "kind": "system_demonstration",
+      "access": "official_author_pdf",
+      "family": "P18",
+      "first_online": null,
+      "verified_on": "2026-10-30",
+      "claim": "Demonstrates real student scheduling with alternatives, course structure, reservations, and travel concerns.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P19",
+      "title": "Instructor Scheduling in UniTime",
+      "authors": [
+        "Tomáš Müller"
+      ],
+      "year": 2026,
+      "venue": "PATAT 2026",
+      "url": "https://www.unitime.cz/papers/patat26-instructors.pdf",
+      "doi": null,
+      "kind": "conference_paper",
+      "access": "official_author_pdf",
+      "family": "P19",
+      "first_online": null,
+      "verified_on": "2026-10-30",
+      "claim": "Describes instructor allocation with availability, qualifications, maximum load, and preferences.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P20",
+      "title": "A knowledge-based approach to detecting and explaining conflicts in timetabling problems",
+      "authors": [
+        "Kylian Van Dessel",
+        "Joost Vennekens"
+      ],
+      "year": 2022,
+      "venue": "PATAT 2022 Volume III, 77–82",
+      "url": "https://patatconference.org/patat2022/proceedings/PATAT_2022_paper_08.pdf",
+      "doi": null,
+      "kind": "conference_paper",
+      "access": "official_proceedings_pdf",
+      "family": "P20",
+      "first_online": null,
+      "verified_on": "2026-10-30",
+      "claim": "Studies comprehensible conflict explanations for ill-defined or inconsistent timetabling instances.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P21",
+      "title": "A Constraint Language For University Timetabling Problems",
+      "authors": [
+        "Vincent Barichard",
+        "Corentin Behuet",
+        "David Genest",
+        "Marc Legeay",
+        "David Lesaint"
+      ],
+      "year": 2022,
+      "venue": "PATAT 2022 Volume III, 138–162",
+      "url": "https://patatconference.org/patat2022/proceedings/PATAT_2022_paper_16.pdf",
+      "doi": null,
+      "kind": "conference_paper",
+      "access": "official_proceedings_pdf",
+      "family": "P21",
+      "first_online": null,
+      "verified_on": "2026-10-30",
+      "claim": "Models course scheduling, sectioning, resources, and multi-scale time in a declarative language.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P22",
+      "title": "Three-phase Curriculum-Based University Course Timetabling with Student Assignment",
+      "authors": [
+        "Elmar Steiner",
+        "Ulrich Pferschy",
+        "Andrea Schaerf"
+      ],
+      "year": 2022,
+      "venue": "PATAT 2022 Volume III, 163–181",
+      "url": "https://patatconference.org/patat2022/proceedings/PATAT_2022_paper_17.pdf",
+      "doi": null,
+      "kind": "conference_paper",
+      "access": "official_proceedings_pdf",
+      "family": "P22",
+      "first_online": null,
+      "verified_on": "2026-10-30",
+      "claim": "Addresses teacher education with two-subject choices, parallel groups, and student assignment.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P23",
+      "title": "A MIP based approach for International Timetabling Competation 2019",
+      "authors": [
+        "Dennis S. Holm",
+        "Rasmus Ø. Mikkelsen",
+        "Matias Sørensen",
+        "Thomas R. Stidsen"
+      ],
+      "year": 2022,
+      "venue": "PATAT 2022 Volume III, 239–242",
+      "url": "https://patatconference.org/patat2022/proceedings/PATAT_2022_paper_28.pdf",
+      "doi": null,
+      "kind": "competition_summary",
+      "access": "official_proceedings_pdf",
+      "family": "P23",
+      "first_online": null,
+      "verified_on": "2026-10-30",
+      "claim": "Describes conflict-graph reductions, initial solutions, and fix-and-optimize MIP methods.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P24",
+      "title": "Optimising Scheduling of Hybrid Learning using Mixed Integer Programming",
+      "authors": [
+        "Matthew Davison",
+        "Ahmed Kheiri",
+        "Konstantinos Zografos"
+      ],
+      "year": 2022,
+      "venue": "PATAT 2022 Volume III, 279–286",
+      "url": "https://patatconference.org/patat2022/proceedings/PATAT_2022_paper_33.pdf",
+      "doi": null,
+      "kind": "conference_paper",
+      "access": "official_proceedings_pdf",
+      "family": "P24",
+      "first_online": null,
+      "verified_on": "2026-10-30",
+      "claim": "Explores online/in-person capacity trade-offs with travel-aware timesets.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    },
+    {
+      "id": "P25",
+      "title": "The CP-SAT-LP Solver (Invited Talk)",
+      "authors": [
+        "Laurent Perron",
+        "Frédéric Didier",
+        "Steven Gay"
+      ],
+      "year": 2023,
+      "venue": "CP 2023, LIPIcs",
+      "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CP.2023.3",
+      "doi": "10.4230/LIPIcs.CP.2023.3",
+      "kind": "invited_talk",
+      "access": "open_access_publisher_full_text",
+      "family": "P25",
+      "first_online": "2023-09-22",
+      "verified_on": "2026-10-30",
+      "claim": "Explains integral CP with lazy-clause generation, LP support, and portfolio workers.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    }
+  ],
+  "secondary_reviews": [
+    {
+      "id": "R01",
+      "title": "A Survey of University Course Timetabling Problem: Perspectives, Trends and Opportunities",
+      "authors": [
+        "M. C. Chen",
+        "S. N. Sze",
+        "S. L. Goh",
+        "N. R. Sabar",
+        "G. Kendall"
+      ],
+      "year": 2021,
+      "venue": "IEEE Access 9, 106515–106529",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9499056",
+      "doi": "10.1109/ACCESS.2021.3100613",
+      "kind": "survey",
+      "access": "publisher_indexed_abstract; author_full_names_not_all_verified",
+      "family": "R01",
+      "first_online": null,
+      "verified_on": "2026-10-30",
+      "claim": "A secondary synthesis used only to discover primary literature, not as an original experimental contribution.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    }
+  ],
+  "foundations_outside_window": [
+    {
+      "id": "F01",
+      "title": "Adaptive large neighborhood search for the curriculum-based course timetabling problem",
+      "authors": [
+        "Alexander Kiefer",
+        "Richard F. Hartl",
+        "Alexander Schnell"
+      ],
+      "year": 2017,
+      "venue": "Annals of Operations Research 252, 255–282",
+      "url": "https://link.springer.com/article/10.1007/s10479-016-2151-2",
+      "doi": "10.1007/s10479-016-2151-2",
+      "kind": "research_paper",
+      "access": "publisher_metadata_and_abstract",
+      "family": "F01",
+      "first_online": "2016-03-04",
+      "verified_on": "2026-10-30",
+      "claim": "Foundational destroy-and-repair ALNS; online publication predates this rolling review window.",
+      "uncertainty": "No independent reproduction of the reported experiments; relevance does not establish transfer of performance to TimetableGenie."
+    }
+  ],
+  "official_documents": [
+    {
+      "id": "D01",
+      "title": "UniTime repository and components",
+      "url": "https://github.com/UniTime/unitime",
+      "version_scope": "master documentation snapshot; commit not checked out",
+      "license": "Apache-2.0",
+      "claim": "Official components include course, student, instructor, exam, and event scheduling.",
+      "kind": "official_documentation",
+      "verified_on": "2026-10-30"
+    },
+    {
+      "id": "D02",
+      "title": "Timefold school timetabling quickstart constraints",
+      "url": "https://github.com/TimefoldAI/timefold-quickstarts/blob/stable/use-cases/school-timetabling/README.md",
+      "version_scope": "stable quickstart documentation snapshot; commit not checked out",
+      "claim": "Hard room/teacher/student-group conflicts and soft room stability/time efficiency are demonstrated.",
+      "kind": "official_documentation",
+      "verified_on": "2026-10-30"
+    },
+    {
+      "id": "D03",
+      "title": "Timefold real-time planning",
+      "url": "https://docs.timefold.ai/timefold-solver/latest/responding-to-change/responding-to-change",
+      "version_scope": "latest documentation identifies 2.7.1 at inspection",
+      "claim": "ProblemChange with pinning supports changing planning facts; not a latency guarantee.",
+      "kind": "official_documentation",
+      "verified_on": "2026-10-30"
+    },
+    {
+      "id": "D04",
+      "title": "Timefold repository legal notice",
+      "url": "https://github.com/timefoldai/timefold-solver",
+      "version_scope": "main documentation snapshot; commit not checked out",
+      "license": "Apache-2.0 Community Edition; Enterprise is separately commercial",
+      "claim": "Official repository states fork from OptaPlanner on 2023-04-20.",
+      "kind": "official_documentation",
+      "verified_on": "2026-10-30"
+    },
+    {
+      "id": "D05",
+      "title": "FET features",
+      "url": "https://lalescu.ro/liviu/fet/features.html",
+      "version_scope": "official documentation snapshot",
+      "license": "AGPL-3.0",
+      "claim": "Documents same-start, grouped/consecutive activity, breaks, student sets, and room availability controls.",
+      "kind": "official_documentation",
+      "verified_on": "2026-10-30"
+    },
+    {
+      "id": "D06",
+      "title": "FET release news",
+      "url": "https://lalescu.ro/liviu/fet/news.html",
+      "version_scope": "7.10.5 release dated 2026-09-11 verified; not asserted latest possible version",
+      "claim": "Release history supplies a concrete inspected version context.",
+      "kind": "official_documentation",
+      "verified_on": "2026-10-30"
+    },
+    {
+      "id": "D07",
+      "title": "CP-SAT solver guide",
+      "url": "https://developers.google.com/optimization/cp/cp_solver/",
+      "version_scope": "official guide snapshot",
+      "claim": "Distinguishes FEASIBLE, OPTIMAL, INFEASIBLE, UNKNOWN, and MODEL_INVALID.",
+      "kind": "official_documentation",
+      "verified_on": "2026-10-30"
+    },
+    {
+      "id": "D08",
+      "title": "CP-SAT protobuf source",
+      "url": "https://github.com/google/or-tools/blob/stable/ortools/sat/cp_model.proto",
+      "version_scope": "stable source documentation snapshot; commit not checked out",
+      "claim": "Assumption explanation is sufficient for infeasibility; irreducibility/minimality is not guaranteed.",
+      "kind": "official_documentation",
+      "verified_on": "2026-10-30"
+    },
+    {
+      "id": "D09",
+      "title": "GTFS Schedule Reference",
+      "url": "https://gtfs.org/documentation/schedule/reference/",
+      "version_scope": "reference revised 2026-04-27",
+      "claim": "Defines routes, trips, stop times, calendars, and transfers; supplemental records are needed for crew duty limits.",
+      "kind": "official_documentation",
+      "verified_on": "2026-10-30"
+    },
+    {
+      "id": "D10",
+      "title": "Curriculum and Credit Framework for Undergraduate Programmes",
+      "url": "https://www.ugc.gov.in/pdfnews/7193743_FYUGP.pdf",
+      "version_scope": "UGC December 2022 framework, sections 3.2.4–3.2.5, printed pp11–14",
+      "claim": "Separates lecture/tutorial and practicum contact-hour mappings and allows institutional course-credit distribution decisions.",
+      "kind": "official_documentation",
+      "verified_on": "2026-10-30"
+    },
+    {
+      "id": "D11",
+      "title": "UGC environment education curriculum framework",
+      "url": "https://www.ugc.gov.in/pdfnews/4111559_Environment_Guideline.pdf",
+      "version_scope": "June 2023, printed p7 footnote",
+      "claim": "Corroborates tutorial/practicum conversion in its stated CCFUP context.",
+      "kind": "official_documentation",
+      "verified_on": "2026-10-30"
+    },
+    {
+      "id": "D12",
+      "title": "NCTE ITEP Curriculum Framework",
+      "url": "https://ncte.gov.in/website/PDF/ITEP/ITEP_Cirriculum.pdf",
+      "version_scope": "official indexed PDF; direct open returned403",
+      "claim": "Describes ITEP as a four-year dual-major teacher-education program; do not substitute a generic FYUGP profile.",
+      "kind": "official_documentation",
+      "verified_on": "2026-10-30"
+    },
+    {
+      "id": "D13",
+      "title": "NCTE Regulations index",
+      "url": "https://web.ncte.gov.in/page/ncte-regulations",
+      "version_scope": "index inspected2026-10-30; contains ITEP amendments and transition notices",
+      "claim": "Teacher-education frameworks have separate regulations and amendments requiring profile/version selection.",
+      "kind": "official_documentation",
+      "verified_on": "2026-10-30"
+    },
+    {
+      "id": "D14",
+      "title": "RFC 9106: Argon2",
+      "url": "https://www.rfc-editor.org/rfc/rfc9106.html",
+      "version_scope": "September2021",
+      "claim": "Argon2 is a memory-hard password-hashing function; using it does not prove timetable feasibility.",
+      "kind": "official_documentation",
+      "verified_on": "2026-10-30"
+    },
+    {
+      "id": "D15",
+      "title": "RFC 8785: JSON Canonicalization Scheme",
+      "url": "https://www.rfc-editor.org/rfc/rfc8785.html",
+      "version_scope": "June2020",
+      "claim": "Canonical JSON supports repeatable hash/signature inputs; it is not a scheduling checker.",
+      "kind": "official_documentation",
+      "verified_on": "2026-10-30"
+    }
+  ],
+  "limitations": [
+    "No database subscription access or exhaustive citation snowballing.",
+    "Publisher abstracts/metadata do not establish a full-text critical review.",
+    "Some conference records are short papers, extended abstracts, or demonstrations and are labeled.",
+    "P01/P02 are related versions in one evidence family, not independent replications.",
+    "Repository documentation was inspected; no baseline source commit was cloned or benchmarked.",
+    "No numerical faculty workload cap or universal program-compliance rule was adopted."
+  ]
+}

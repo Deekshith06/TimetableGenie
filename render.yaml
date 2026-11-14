@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: timetablegenie
+    runtime: docker
+    dockerfilePath: Dockerfile
+    plan: free
+    region: oregon
+    envVars:
+      - key: ALLOW_DEMO_AUTH
+        value: "true"
+      - key: SESSION_COOKIE_SECURE
+        value: "false"
+      - key: FRONTEND_DIST
+        value: "/app/dist-local"

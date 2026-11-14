@@ -1,0 +1,173 @@
+<!doctype html>
+<!--
+MIT License
+
+Copyright (c) 2026 Enes Ozturk
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+-->
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>UI-METRIC-001 · Dimensional Drawing</title><style>
+/* Layout: one Apple-style dimensional drawing sheet (notes · section · plan · tables · details · layouts · title block), black on white, single light theme by design. */
+:root{--paper:#ececec;--sheet:#ffffff;--ink:#111;--ink2:#444;--ink3:#7a7a7a;--fill:#f3f3f3;--fill2:#e6e6e6;--f:'Arimo','Helvetica Neue',Helvetica,Arial,sans-serif;color-scheme:light}
+body{background:var(--paper);color:var(--ink);font-family:var(--f)}
+.wrap{max-width:1760px;margin:0 auto;padding-block:24px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.scroll{overflow-x:auto;background:var(--sheet);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+svg{display:block;width:100%;min-width:1100px;height:auto}
+.tb{background:var(--sheet);border:1.5px solid var(--ink);display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;margin-bottom:24px}
+.tb>div{border-right:1px solid #d0d0d0;border-bottom:1px solid #d0d0d0;padding:10px 12px;min-width:0}
+.tb .big{grid-row:span 2;display:flex;flex-direction:column;justify-content:space-between;gap:12px}
+.tb h1{font-size:clamp(26px,4vw,40px);line-height:1;margin:0;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.lbl{text-transform:uppercase;letter-spacing:.08em;font-size:12px;color:var(--ink3);font-weight:600}
+.tb .v{font-size:13px;margin-top:2px;font-variant-numeric:tabular-nums}
+.tb .notes{grid-column:1/-1;border-right:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:6px 24px;font-size:13px;color:var(--ink2)}
+.tb .notes ol{margin:4px 0 0;padding-left:18px}
+.tb .figs{grid-column:1/-1;border-right:0;border-bottom:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px 18px}
+.tb .figs .v{font-size:17px}
+@media (max-width:640px){.tb{grid-template-columns:1fr 1fr}.tb .big{grid-column:1/-1;grid-row:auto}}
+.sheetwrap{margin-bottom:28px}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--ink2);padding:10px 2px 0}
+.foot b{font-weight:600;color:var(--ink)}
+/* drawing */
+.u{font-family:var(--f);text-transform:uppercase;letter-spacing:.07em}
+.border{fill:none;stroke:var(--ink);stroke-width:1.2}
+.obj{fill:var(--sheet);stroke:var(--ink);stroke-width:1.6;stroke-linejoin:round}
+.well{fill:var(--fill);stroke:var(--ink);stroke-width:1}
+.slot{fill:none;stroke:var(--ink2);stroke-width:.8;stroke-dasharray:4 3}
+.hug{fill:var(--fill2);stroke:var(--ink);stroke-width:1}
+.thin{fill:none;stroke:var(--ink);stroke-width:.8}
+.ph{fill:none;stroke:var(--ink3);stroke-width:.8;stroke-dasharray:14 3 3 3}
+.cl{fill:none;stroke:var(--ink3);stroke-width:.7;stroke-dasharray:16 3 2 3}
+.cut{stroke:var(--ink);stroke-width:2}
+.dl{stroke:var(--ink);stroke-width:.7;fill:none}
+.ext{stroke:var(--ink);stroke-width:.55;fill:none}
+.arrow{fill:var(--ink)}
+.hl{stroke:var(--ink2);stroke-width:.7}
+.hs{stroke:var(--ink);stroke-width:.8}
+.env{fill:none;stroke:var(--ink);stroke-width:.8;stroke-dasharray:10 3 2 3}
+.dt{font:400 11px var(--f);fill:var(--ink);paint-order:stroke;stroke:var(--sheet);stroke-width:4px;stroke-linejoin:round}
+.dts{font:400 9.5px var(--f);fill:var(--ink2);letter-spacing:.06em;text-transform:uppercase;paint-order:stroke;stroke:var(--sheet);stroke-width:3px}
+.sl{font:400 9px var(--f);fill:var(--ink2);letter-spacing:.08em;text-transform:uppercase}
+.nt{font:400 11.5px var(--f);fill:var(--ink);letter-spacing:.06em;text-transform:uppercase}
+.nth{font:700 13px var(--f);fill:var(--ink);letter-spacing:.06em}
+.vt{font:400 12px var(--f);fill:var(--ink);letter-spacing:.1em;text-transform:uppercase}
+.vtb{font:400 20px var(--f);fill:var(--ink);letter-spacing:.06em}
+.nb{fill:var(--sheet);stroke:var(--ink);stroke-width:.9}
+.nbt{font:400 9.5px var(--f);fill:var(--ink)}
+.lead{stroke:var(--ink);stroke-width:.7;fill:none}
+.dot{fill:var(--ink)}
+.th{font:400 10.5px var(--f);fill:var(--ink);letter-spacing:.05em;text-transform:uppercase}
+.tc{font:400 10.5px var(--f);fill:var(--ink)}
+.tbk{font:400 7px var(--f);fill:var(--ink2);letter-spacing:.04em;text-transform:uppercase}
+.tbt{font:700 15px var(--f);fill:var(--ink)}
+.tbv{font:400 17px var(--f);fill:var(--ink);letter-spacing:.06em}
+
+/* title block restyled to match the drawing sheet: thin black rules, plain caps lettering */
+.tb{border:1.2px solid var(--ink);border-radius:16px;overflow:hidden}
+.tb>div{border-right:.8px solid var(--ink);border-bottom:.8px solid var(--ink);padding:10px 14px}
+.tb>div:nth-child(4),.tb>div:nth-child(7){border-right:0}
+.tb .lbl{font-size:9.5px;font-weight:400;letter-spacing:.06em;color:var(--ink2)}
+.tb h1{font-weight:400;letter-spacing:.1em;font-size:clamp(28px,4vw,44px);margin-top:4px}
+.tb .v{font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink)}
+.tb .big .v{font-size:11px;color:var(--ink2);line-height:1.6}
+.tb .notes{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);line-height:1.9}
+.tb .notes ol{padding-left:20px}
+.tb .nh{font-weight:700;font-size:13px;letter-spacing:.06em}
+.tb .nh span{font-weight:400;font-size:11.5px;margin-left:6px}
+.tb .figs>div{border-left:.8px solid var(--ink);padding-left:14px}
+.tb .figs>div:first-child{border-left:0;padding-left:0}
+.tb .figs .v{font-size:18px;letter-spacing:.06em;text-transform:none;margin-top:4px}
+.foot{font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+.foot b{font-weight:700}
+body{margin:0}.tb .figs{grid-template-columns:repeat(6,1fr)}.tb h1{font-size:34px}.tb .big{justify-content:center}.source-note{font-size:10px;color:#666;line-height:1.6;margin-top:18px}a{color:inherit}</style></head><body><div class="wrap"><header class="tb"><div class="big"><div class="lbl">UI component · measured architecture</div><h1>Metric card</h1><div class="v">Slots, geometry and layers. Content-independent reference.</div></div><div><div class="lbl">Dwg no.</div><div class="v">UI-METRIC-001</div></div><div><div class="lbl">Revision</div><div class="v">A · 2026-10-30</div></div><div><div class="lbl">Sheets</div><div class="v">1</div></div><div><div class="lbl">Units</div><div class="v">CSS px @ 1×</div></div><div><div class="lbl">Scale</div><div class="v">Noted · do not scale screen</div></div><div><div class="lbl">Source</div><div class="v">Stat component · 4 live instances</div></div><div class="notes"><div><span class="nh">NOTES:<span>(UNLESS OTHERWISE SPECIFIED)</span></span><ol><li>Measured from source and rendered component, not estimated from artwork.</li><li>W is fluid; 251 is a desktop reference measurement.</li><li>Slots replace real copy. Text width is not a design dimension.</li></ol></div><div><ol start="4"><li>H = 2·B + 2·S1 + H1 + H2 + H3 + H4 + 3·S2 = 172.</li><li>Responsive metadata wrap may increase H. Unmeasured states remain [TBD].</li><li>Grayscale, thin rules and hatches distinguish layers; no shadow is specified.</li></ol></div></div><div class="figs"><div><div class="lbl">W · fluid width</div><div class="v">REF 251</div></div><div><div class="lbl">H · derived height</div><div class="v">172</div></div><div><div class="lbl">S1 · padding</div><div class="v">20</div></div><div><div class="lbl">S2 · row gap</div><div class="v">8</div></div><div><div class="lbl">R1 · outer radius</div><div class="v">10</div></div><div><div class="lbl">B · border</div><div class="v">1</div></div></div></header><div class="sheetwrap"><div class="scroll"><svg id="sh1" viewBox="0 0 1700 1060" role="img" aria-label="Metric-card dimensional drawing with measured plan, exploded layers, radius details and variable tables"></svg></div><div class="foot"><span>2026-10-30 | UI component reference</span><span><b>Metric card · architecture</b> | 1 of 1</span></div></div><p class="source-note">Drawing kit adapted from Enes Ozturk's <a href="https://github.com/enesozturk/dimensional-drawing" target="_blank" rel="noreferrer">dimensional-drawing</a> (MIT). W is responsive, reference dimensions are measured, and unknown responsive states are [TBD].</p></div><script>
+(function(){
+const NS='http://www.w3.org/2000/svg';let sv,A,HAT,uid=0;
+function mk(t,a,p){const e=document.createElementNS(NS,t);for(const k in a)if(a[k]!=null)e.setAttribute(k,a[k]);(p||sv).appendChild(e);return e}
+function tx(x,y,s,c,a,p){const t=mk('text',Object.assign({x:x,y:y,class:c||'dt'},a||{}),p);t.textContent=s;return t}
+function begin(id){sv=document.getElementById(id);sv.innerHTML='';const n=uid++;const d=mk('defs',{});const m=mk('marker',{id:'ar'+n,viewBox:'0 0 10 10',refX:10,refY:5,markerWidth:7,markerHeight:7,orient:'auto-start-reverse',markerUnits:'userSpaceOnUse'},d);mk('path',{d:'M0,1.7 L10,5 L0,8.3 z',class:'arrow'},m);
+ const pt=mk('pattern',{id:'hat'+n,width:5,height:5,patternUnits:'userSpaceOnUse',patternTransform:'rotate(45)'},d);mk('line',{x1:0,y1:0,x2:0,y2:5,class:'hl'},pt);A='url(#ar'+n+')';HAT='url(#hat'+n+')';rr(20,20,1660,1020,16,'border')}
+
+/* ---- kit ---- */
+function dimH(x1,x2,y,e1,e2,l,o){o=o||{};[[x1,e1],[x2,e2]].forEach(([x,e])=>{if(e==null)return;const s=Math.sign(y-e)||1;mk('line',{x1:x,y1:e+s*3,x2:x,y2:y+s*5,class:'ext'})});
+ if(x2-x1>=28)mk('line',{x1:x1,y1:y,x2:x2,y2:y,class:'dl','marker-start':A,'marker-end':A});else{mk('line',{x1:x1-13,y1:y,x2:x1,y2:y,class:'dl','marker-end':A});mk('line',{x1:x2+13,y1:y,x2:x2,y2:y,class:'dl','marker-end':A});mk('line',{x1:x1,y1:y,x2:x2,y2:y,class:'dl'})}
+ tx((x1+x2)/2+(o.dx||0),(o.below?y+13:y-4)+(o.dy||0),l,o.c||'dt',{'text-anchor':'middle'})}
+function dimV(y1,y2,x,e1,e2,l,o){o=o||{};[[y1,e1],[y2,e2]].forEach(([y,e])=>{if(e==null)return;const s=Math.sign(x-e)||1;mk('line',{x1:e+s*3,y1:y,x2:x+s*5,y2:y,class:'ext'})});
+ if(y2-y1>=28)mk('line',{x1:x,y1:y1,x2:x,y2:y2,class:'dl','marker-start':A,'marker-end':A});else{mk('line',{x1:x,y1:y1-13,x2:x,y2:y1,class:'dl','marker-end':A});mk('line',{x1:x,y1:y2+13,x2:x,y2:y2,class:'dl','marker-end':A});mk('line',{x1:x,y1:y1,x2:x,y2:y2,class:'dl'})}
+ const c=(y1+y2)/2;if(o.side){const r=o.side==='r';tx(r?x+6:x-6,c+4,l,o.c||'dt',{'text-anchor':r?'start':'end'})}else tx(x-5,c,l,o.c||'dt',{'text-anchor':'middle',transform:'rotate(-90 '+(x-5)+' '+c+')'})}
+function callout(px,py,ex,ey,l,dir,c){const s=dir||(ex>=px?1:-1);mk('circle',{cx:px,cy:py,r:1.8,class:'dot'});mk('polyline',{points:px+','+py+' '+ex+','+ey+' '+(ex+s*10)+','+ey,class:'lead'});tx(ex+s*14,ey+4,l,c||'dt',{'text-anchor':s>0?'start':'end'})}
+function rad(cx,cy,r,c,l,L){const sx=c.includes('l')?-1:1,sy=c.includes('t')?-1:1;const ox=cx-sx*r,oy=cy-sy*r;const px=ox+sx*r*Math.SQRT1_2,py=oy+sy*r*Math.SQRT1_2;callout(px,py,px+sx*L,py+sy*L,l,sx)}
+function nb(x,y,n){mk('rect',{x:x-6,y:y-6,width:12,height:12,class:'nb'});tx(x,y+3.5,String(n),'nbt',{'text-anchor':'middle'})}
+function rr(x,y,w,h,r,c){return mk('rect',{x:x,y:y,width:w,height:h,rx:r,class:c})}
+function slotLabel(x,y,w,h,l,al){tx(al==='l'?x+6:x+w/2,y+h/2+3.2,l,'sl',{'text-anchor':al==='l'?'start':'middle'})}
+function title(x,y,t,s){tx(x,y,t,'vt',{'text-anchor':'middle'});if(s)tx(x,y+14,s,'dts',{'text-anchor':'middle'})}
+function notes(list,extra){const NX=50,NY=58;tx(NX,NY,'NOTES:','nth');tx(NX+62,NY,'(UNLESS OTHERWISE SPECIFIED)','nt');
+ list.forEach(([n,t],i)=>{const y=NY+30+i*24;if(n){nb(NX+6,y-4,n);tx(NX+22,y,t,'nt')}else tx(NX,y,t,'nt')})}
+function table(x,y,ttl,rows){const ws=[40,88,96],rh=17;tx(x,y-8,ttl,'vt');
+ const all=[['Code','Variable','Value']].concat(rows);all.forEach((r,i)=>{let cx2=x;r.forEach((c,j)=>{mk('rect',{x:cx2,y:y+i*rh,width:ws[j],height:rh,class:'thin'});tx(cx2+(j?ws[j]/2:6),y+i*rh+12,c,i?'tc':'th',{'text-anchor':j?'middle':'start'});cx2+=ws[j]})});return y+all.length*rh+36}
+function detailRef(cx,cy,r,lbl,lx,ly){mk('circle',{cx:cx,cy:cy,r:r,class:'ph'});const a=Math.atan2(ly-cy,lx-cx);mk('line',{x1:cx+r*Math.cos(a),y1:cy+r*Math.sin(a),x2:lx,y2:ly,class:'lead'});tx(lx+(lx<cx?-4:4),ly+4,lbl,'dts',{'text-anchor':lx<cx?'end':'start'})}
+function titleBlock(n,name){const TBX=1226,TBY=930;
+ rr(TBX,TBY,440,92,0,'thin');mk('line',{x1:TBX+200,y1:TBY,x2:TBX+200,y2:TBY+92,class:'thin'});
+ ['NOTICE: REFERENCE DRAWING FOR A','UI CARD COMPONENT. ARCHITECTURE','ONLY. CONTENT, COLOR AND COPY','ARE OUT OF SCOPE.','SHEET: '+name].forEach((t,i)=>tx(TBX+8,TBY+18+i*11,t,'tbk'));
+ tx(TBX+210,TBY+22,'Card component','tbt');
+ mk('line',{x1:TBX+200,y1:TBY+32,x2:TBX+440,y2:TBY+32,class:'thin'});mk('line',{x1:TBX+200,y1:TBY+62,x2:TBX+440,y2:TBY+62,class:'thin'});
+ mk('line',{x1:TBX+236,y1:TBY+32,x2:TBX+236,y2:TBY+92,class:'thin'});mk('line',{x1:TBX+400,y1:TBY+32,x2:TBX+400,y2:TBY+62,class:'thin'});
+ tx(TBX+204,TBY+41,'SIZE','tbk');tx(TBX+210,TBY+57,'D','tbv');tx(TBX+240,TBY+41,'DRAWING NUMBER','tbk');tx(TBX+242,TBY+57,'UI-CARD-001','tc');tx(TBX+404,TBY+41,'REV.','tbk');tx(TBX+412,TBY+57,'D','tc');
+ tx(TBX+204,TBY+71,'SCALE','tbk');tx(TBX+242,TBY+84,'NOTED','tbv');mk('line',{x1:TBX+340,y1:TBY+62,x2:TBX+340,y2:TBY+92,class:'thin'});tx(TBX+344,TBY+71,'UNITS','tbk');tx(TBX+346,TBY+85,'CSS PX','tc');
+ tx(TBX+404,TBY+71,'SHT','tbk');tx(TBX+408,TBY+85,n+' OF 2','tc')}
+
+
+const W=251,H=172,S1=20,S2=8,B=1,R1=10,Z1=32,R2=6;
+function plan(ox,oy,k,labels=true){const X=x=>ox+x*k,Y=y=>oy+y*k;
+ rr(X(0),Y(0),W*k,H*k,R1*k,'obj');
+ const sl=(x,y,w,h,cls,label)=>{rr(X(x),Y(y),w*k,h*k,cls==='hug'?R2*k:2*k,cls);if(labels)slotLabel(X(x),Y(y),w*k,h*k,label);};
+ sl(21,21,169,32,'slot','LABEL SLOT · FLEX');sl(198,21,32,32,'hug','ICON');
+ sl(21,61,209,44,'slot','VALUE SLOT · FILL');sl(21,113,209,16,'slot','DETAIL SLOT · FILL');sl(21,137,209,14,'slot','META SLOT · FILL');
+ return {X,Y};}
+begin('sh1');
+notes([[1,'FOUR LIVE INSTANCES SHARE THE SAME ROW GEOMETRY.'],[2,'WIDTH W IS FLUID; REF 251 IS ONE DESKTOP STATE.'],[3,'BORDER B AND PADDING S1 ARE SEPARATE.'],[4,'ROW GAP S2 APPEARS THREE TIMES.'],[5,'ICON BOX HUGS; LABEL FLEXES WITH MIN-WIDTH 0.'],[6,'METADATA WRAP MAY INCREASE MOBILE HEIGHT.'],[7,'NO SHADOW. NO CONTENT-WIDTH DIMENSIONS.']]);
+{const k=1.7,{X,Y}=plan(650,260,k);
+ dimH(X(0),X(W),Y(-44),Y(0),Y(0),'W · REF 251');
+ dimH(X(1),X(21),Y(-17),Y(0),Y(21),'S1',{dx:-9});dimH(X(21),X(190),Y(-17),Y(21),Y(21),'FLEX');dimH(X(190),X(198),Y(-17),Y(21),Y(21),'S2',{dy:-14});dimH(X(198),X(230),Y(-17),Y(21),Y(21),'Z1');dimH(X(230),X(250),Y(-17),Y(21),Y(0),'S1',{dx:9});
+ dimV(Y(0),Y(H),X(-38),X(0),X(0),'H');
+ [[1,21,'S1'],[21,53,'H1'],[53,61,'S2'],[61,105,'H2'],[105,113,'S2'],[113,129,'H3'],[129,137,'S2'],[137,151,'H4'],[151,171,'S1']].forEach(([a,b,l],i)=>dimV(Y(a),Y(b),X(W+27),X(W),X(W),l,{side:'r',c:'dt'}));
+ rad(X(0),Y(H),R1*k,'bl','R1',24);detailRef(X(214),Y(37),38,'DETAIL A',X(180),Y(90));nb(X(14),Y(80),3);nb(X(185),Y(57),4);
+ title(X(W/2),Y(H+42),'PLAN VIEW','SCALE 1.7:1 · FOUR INSTANCES MEASURED');}
+{let y=105;y=table(1325,y,'SPACING',[['B','border','1'],['S1','card-pad','20'],['S2','row-gap','8'],['S5','grid-gap','16'],['S3','icon-inset','(Z1−I1)÷2 = 7']]);
+ y=table(1325,y,'SIZE',[['W','width','fluid · ref251'],['H1','header-h','32'],['H2','value-h','44'],['H3','detail-h','16'],['H4','meta-h','14'],['Z1','icon-box','32'],['I1','icon-size','18'],['H','height','derived172']]);
+ y=table(1325,y,'RADIUS',[['R1','container','10'],['R2','icon-box','6']]);
+ table(1325,y,'RESPONSIVE',[['W','desktop','fluid'],['H','desktop','172'],['H','mobile','HUG / wrap'],['W','other-state','[TBD]']]);}
+/* Exploded layers; the separation is schematic, not a fabricated shadow. */
+{const a=.94,b=.17,c=-.34,d=.47,TX=355,TY=820,gap=65;
+ const P=(x,y,z)=>[TX+a*x+c*y,TY+b*x+d*y-z];
+ [[0,0],[W,0],[W,H],[0,H]].forEach(([x,y])=>{const p=P(x,y,0),q=P(x,y,2*gap);mk('line',{x1:p[0],y1:p[1],x2:q[0],y2:q[1],class:'ph'});});
+ for(let level=0;level<3;level++){const g=mk('g',{transform:`matrix(${a},${b},${c},${d},${TX},${TY-level*gap})`});
+  if(level===0)mk('rect',{x:-8,y:-8,width:W+16,height:H+16,class:'thin','vector-effect':'non-scaling-stroke'},g);
+  if(level===1)mk('rect',{x:0,y:0,width:W,height:H,rx:R1,class:'obj','vector-effect':'non-scaling-stroke'},g);
+  if(level===2)for(const [x,y,w,h,cls] of [[21,21,169,32,'slot'],[198,21,32,32,'hug'],[21,61,209,44,'slot'],[21,113,209,16,'slot'],[21,137,209,14,'slot']])mk('rect',{x,y,width:w,height:h,rx:cls==='hug'?R2:2,class:cls,'vector-effect':'non-scaling-stroke'},g);
+  const q=P(0,H,level*gap);mk('polyline',{points:`${q[0]},${q[1]} 230,${q[1]}`,class:'lead'});tx(220,q[1]+3,['L0 · CANVAS','L1 · CONTAINER','L2 · SLOTS & ICON'][level],'dts',{'text-anchor':'end'});
+ }
+ title(430,940,'EXPLODED VIEW','AXONOMETRIC · LAYER SEPARATION SCHEMATIC');}
+/* Independent corner details, not an invented nested-surface relationship. */
+{for(const [i,r,label] of [[0,10,'R1 · CONTAINER'],[1,6,'R2 · ICON BOX']]){const x=725+i*240,y=835,q=4,L=33;mk('path',{d:`M${x},${y-L*q} L${x},${y-r*q} A${r*q},${r*q} 0 0 0 ${x+r*q},${y} L${x+L*q},${y}`,class:'thin'});const cx=x+r*q,cy=y-r*q;mk('path',{d:`M${cx-6},${cy} h12 M${cx},${cy-6} v12`,class:'thin'});callout(cx-r*q*.707,cy+r*q*.707,x-32,y+30,i?'R2':'R1',-1);title(x+65,y+60,label,'SCALE 4:1');}
+ title(915,695,'RADIUS DETAILS','INDEPENDENT SOURCE VALUES · NOT A NESTED-RADIUS FORMULA');}
+/* Detail A: icon centered inside its measured box. */
+{const X=185,Y=480,k=2.4;rr(X,Y,Z1*k,Z1*k,R2*k,'hug');rr(X+7*k,Y+7*k,18*k,18*k,0,'slot');dimH(X,X+Z1*k,Y-21,Y,Y,'Z1');dimH(X+7*k,X+25*k,Y+Z1*k+25,Y+25*k,Y+25*k,'I1');callout(X+7*k,Y+7*k,X+105,Y+4,'S3 = (Z1−I1)÷2',1);title(X+38,Y+135,'DETAIL A · ICON','SCALE 2.4:1');}
+{const x=67,y=992,k=.23;for(let i=0;i<4;i++){rr(x+i*(W+16)*k,y,W*k,H*k,R1*k,'thin');}tx(x,y-15,'GRID: 4 FLUID COLUMNS · GAP S5 · SCALE 0.23:1','dts');}
+})();
+</script><!-- Drawing kit: Copyright (c) 2026 Enes Ozturk, MIT. Full license retained in source distribution. --></body></html>

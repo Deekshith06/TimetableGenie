@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-30",
+  "hardware": {
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "logical_cpu": 9
+  },
+  "python": "3.12.14",
+  "seed_set": [
+    11,
+    29,
+    42
+  ],
+  "cp_sat_search_seconds": 1.5,
+  "workers": 1,
+  "note": "Pilot synthetic results, not external competition benchmarks. No performance superiority is inferred."
+}

@@ -1,0 +1,1476 @@
+{
+  "schema_version": "1.0",
+  "id": "NEG_no_windows",
+  "title": "Multidisciplinary undergraduate timetable",
+  "institution": "Northbridge Institute \u00b7 synthetic demonstration",
+  "provenance": {
+    "kind": "synthetic",
+    "description": "Seeded example. Credits, workload limits and pathways are illustrative institutional policies, not regulatory certification.",
+    "seed": 42,
+    "source_url": null
+  },
+  "calendar": {
+    "days": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "periods": [
+      {
+        "start": 540,
+        "end": 600
+      },
+      {
+        "start": 600,
+        "end": 660
+      },
+      {
+        "start": 660,
+        "end": 720
+      },
+      {
+        "start": 780,
+        "end": 840
+      },
+      {
+        "start": 840,
+        "end": 900
+      }
+    ],
+    "timezone": "Asia/Kolkata",
+    "term_start": "2026-11-02",
+    "term_end": "2026-11-27",
+    "holidays": [
+      "2026-11-12"
+    ]
+  },
+  "courses": [
+    {
+      "id": "CS201",
+      "title": "Algorithms",
+      "category": "DSC",
+      "credits": 4,
+      "profile": "Configurable synthetic undergraduate profile"
+    },
+    {
+      "id": "CS202L",
+      "title": "Operating Systems Lab",
+      "category": "DSC",
+      "credits": 1,
+      "profile": "Configurable synthetic undergraduate profile"
+    },
+    {
+      "id": "EC201",
+      "title": "Macroeconomics",
+      "category": "DSC",
+      "credits": 3,
+      "profile": "Configurable synthetic undergraduate profile"
+    },
+    {
+      "id": "DS201",
+      "title": "Data Foundations",
+      "category": "DSC",
+      "credits": 3,
+      "profile": "Configurable synthetic undergraduate profile"
+    },
+    {
+      "id": "AI_MIN_1",
+      "title": "ML for Non-CS",
+      "category": "MIC",
+      "credits": 2,
+      "profile": "Configurable synthetic undergraduate profile"
+    },
+    {
+      "id": "FIN_MIN_1",
+      "title": "Computational Finance",
+      "category": "MIC",
+      "credits": 2,
+      "profile": "Configurable synthetic undergraduate profile"
+    },
+    {
+      "id": "PSY101",
+      "title": "Cognitive Psychology",
+      "category": "MDC",
+      "credits": 2,
+      "profile": "Configurable synthetic undergraduate profile"
+    },
+    {
+      "id": "ENV105",
+      "title": "Climate Systems",
+      "category": "MDC",
+      "credits": 2,
+      "profile": "Configurable synthetic undergraduate profile"
+    },
+    {
+      "id": "SEC_WEB",
+      "title": "Full-Stack Studio",
+      "category": "SEC",
+      "credits": 1,
+      "profile": "Configurable synthetic undergraduate profile"
+    },
+    {
+      "id": "VAC_ETH",
+      "title": "Ethics & Constitutional Values",
+      "category": "VAC",
+      "credits": 2,
+      "profile": "Configurable synthetic undergraduate profile"
+    },
+    {
+      "id": "AEC_COM",
+      "title": "Communication Skills",
+      "category": "AEC",
+      "credits": 2,
+      "profile": "Configurable synthetic undergraduate profile"
+    },
+    {
+      "id": "INT_RES",
+      "title": "Research & Teaching Practice",
+      "category": "INT",
+      "credits": 1,
+      "profile": "Configurable synthetic undergraduate profile"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "HALL_101",
+      "name": "Lecture Hall 101",
+      "type": "LECTURE_HALL",
+      "capacity": 100,
+      "building": "Main",
+      "equipment": [
+        "projector"
+      ],
+      "unavailable": []
+    },
+    {
+      "id": "HALL_102",
+      "name": "Lecture Hall 102",
+      "type": "LECTURE_HALL",
+      "capacity": 60,
+      "building": "Main",
+      "equipment": [
+        "projector"
+      ],
+      "unavailable": []
+    },
+    {
+      "id": "COMP_LAB_201",
+      "name": "Computing Lab 201",
+      "type": "COMPUTER_LAB",
+      "capacity": 30,
+      "building": "Technology",
+      "equipment": [
+        "computers",
+        "projector"
+      ],
+      "unavailable": []
+    },
+    {
+      "id": "SKILL_LAB_202",
+      "name": "Studio Lab 202",
+      "type": "SKILL_STUDIO",
+      "capacity": 30,
+      "building": "Technology",
+      "equipment": [
+        "computers",
+        "projector"
+      ],
+      "unavailable": []
+    },
+    {
+      "id": "SEM_301",
+      "name": "Seminar Room 301",
+      "type": "SEMINAR_ROOM",
+      "capacity": 50,
+      "building": "Humanities",
+      "equipment": [
+        "projector"
+      ],
+      "unavailable": []
+    },
+    {
+      "id": "SEM_302",
+      "name": "Seminar Room 302",
+      "type": "SEMINAR_ROOM",
+      "capacity": 40,
+      "building": "Humanities",
+      "equipment": [
+        "projector"
+      ],
+      "unavailable": []
+    }
+  ],
+  "faculty": [
+    {
+      "id": "F01",
+      "name": "Dr. Mira Shah",
+      "department": "Computer Science",
+      "max_minutes": 720,
+      "course_ids": [
+        "CS201",
+        "DS201"
+      ],
+      "unavailable": [
+        {
+          "day": 0,
+          "period": 0
+        }
+      ],
+      "preferred": [
+        {
+          "day": 0,
+          "period": 0
+        },
+        {
+          "day": 0,
+          "period": 1
+        },
+        {
+          "day": 0,
+          "period": 2
+        },
+        {
+          "day": 1,
+          "period": 0
+        },
+        {
+          "day": 1,
+          "period": 1
+        },
+        {
+          "day": 1,
+          "period": 2
+        },
+        {
+          "day": 2,
+          "period": 0
+        },
+        {
+          "day": 2,
+          "period": 1
+        },
+        {
+          "day": 2,
+          "period": 2
+        },
+        {
+          "day": 3,
+          "period": 0
+        },
+        {
+          "day": 3,
+          "period": 1
+        },
+        {
+          "day": 3,
+          "period": 2
+        },
+        {
+          "day": 4,
+          "period": 0
+        },
+        {
+          "day": 4,
+          "period": 1
+        },
+        {
+          "day": 4,
+          "period": 2
+        }
+      ]
+    },
+    {
+      "id": "F02",
+      "name": "Dr. Arjun Rao",
+      "department": "Computing & AI",
+      "max_minutes": 720,
+      "course_ids": [
+        "CS202L",
+        "AI_MIN_1"
+      ],
+      "unavailable": [
+        {
+          "day": 0,
+          "period": 0
+        }
+      ],
+      "preferred": [
+        {
+          "day": 0,
+          "period": 0
+        },
+        {
+          "day": 0,
+          "period": 1
+        },
+        {
+          "day": 0,
+          "period": 2
+        },
+        {
+          "day": 1,
+          "period": 0
+        },
+        {
+          "day": 1,
+          "period": 1
+        },
+        {
+          "day": 1,
+          "period": 2
+        },
+        {
+          "day": 2,
+          "period": 0
+        },
+        {
+          "day": 2,
+          "period": 1
+        },
+        {
+          "day": 2,
+          "period": 2
+        },
+        {
+          "day": 3,
+          "period": 0
+        },
+        {
+          "day": 3,
+          "period": 1
+        },
+        {
+          "day": 3,
+          "period": 2
+        },
+        {
+          "day": 4,
+          "period": 0
+        },
+        {
+          "day": 4,
+          "period": 1
+        },
+        {
+          "day": 4,
+          "period": 2
+        }
+      ]
+    },
+    {
+      "id": "F03",
+      "name": "Dr. Leena Das",
+      "department": "Economics",
+      "max_minutes": 720,
+      "course_ids": [
+        "EC201",
+        "FIN_MIN_1"
+      ],
+      "unavailable": [
+        {
+          "day": 2,
+          "period": 0
+        }
+      ],
+      "preferred": [
+        {
+          "day": 0,
+          "period": 0
+        },
+        {
+          "day": 0,
+          "period": 1
+        },
+        {
+          "day": 0,
+          "period": 2
+        },
+        {
+          "day": 1,
+          "period": 0
+        },
+        {
+          "day": 1,
+          "period": 1
+        },
+        {
+          "day": 1,
+          "period": 2
+        },
+        {
+          "day": 2,
+          "period": 0
+        },
+        {
+          "day": 2,
+          "period": 1
+        },
+        {
+          "day": 2,
+          "period": 2
+        },
+        {
+          "day": 3,
+          "period": 0
+        },
+        {
+          "day": 3,
+          "period": 1
+        },
+        {
+          "day": 3,
+          "period": 2
+        },
+        {
+          "day": 4,
+          "period": 0
+        },
+        {
+          "day": 4,
+          "period": 1
+        },
+        {
+          "day": 4,
+          "period": 2
+        }
+      ]
+    },
+    {
+      "id": "F04",
+      "name": "Dr. Nisha Sen",
+      "department": "Psychology & Languages",
+      "max_minutes": 720,
+      "course_ids": [
+        "PSY101",
+        "AEC_COM"
+      ],
+      "unavailable": [
+        {
+          "day": 1,
+          "period": 0
+        }
+      ],
+      "preferred": [
+        {
+          "day": 0,
+          "period": 0
+        },
+        {
+          "day": 0,
+          "period": 1
+        },
+        {
+          "day": 0,
+          "period": 2
+        },
+        {
+          "day": 1,
+          "period": 0
+        },
+        {
+          "day": 1,
+          "period": 1
+        },
+        {
+          "day": 1,
+          "period": 2
+        },
+        {
+          "day": 2,
+          "period": 0
+        },
+        {
+          "day": 2,
+          "period": 1
+        },
+        {
+          "day": 2,
+          "period": 2
+        },
+        {
+          "day": 3,
+          "period": 0
+        },
+        {
+          "day": 3,
+          "period": 1
+        },
+        {
+          "day": 3,
+          "period": 2
+        },
+        {
+          "day": 4,
+          "period": 0
+        },
+        {
+          "day": 4,
+          "period": 1
+        },
+        {
+          "day": 4,
+          "period": 2
+        }
+      ]
+    },
+    {
+      "id": "F05",
+      "name": "Dr. Kabir Mehta",
+      "department": "Environment & Humanities",
+      "max_minutes": 720,
+      "course_ids": [
+        "ENV105",
+        "VAC_ETH"
+      ],
+      "unavailable": [
+        {
+          "day": 1,
+          "period": 0
+        }
+      ],
+      "preferred": [
+        {
+          "day": 0,
+          "period": 0
+        },
+        {
+          "day": 0,
+          "period": 1
+        },
+        {
+          "day": 0,
+          "period": 2
+        },
+        {
+          "day": 1,
+          "period": 0
+        },
+        {
+          "day": 1,
+          "period": 1
+        },
+        {
+          "day": 1,
+          "period": 2
+        },
+        {
+          "day": 2,
+          "period": 0
+        },
+        {
+          "day": 2,
+          "period": 1
+        },
+        {
+          "day": 2,
+          "period": 2
+        },
+        {
+          "day": 3,
+          "period": 0
+        },
+        {
+          "day": 3,
+          "period": 1
+        },
+        {
+          "day": 3,
+          "period": 2
+        },
+        {
+          "day": 4,
+          "period": 0
+        },
+        {
+          "day": 4,
+          "period": 1
+        },
+        {
+          "day": 4,
+          "period": 2
+        }
+      ]
+    },
+    {
+      "id": "F06",
+      "name": "Prof. Tara Iyer",
+      "department": "Applied Learning",
+      "max_minutes": 720,
+      "course_ids": [
+        "SEC_WEB",
+        "INT_RES"
+      ],
+      "unavailable": [
+        {
+          "day": 1,
+          "period": 0
+        }
+      ],
+      "preferred": [
+        {
+          "day": 0,
+          "period": 0
+        },
+        {
+          "day": 0,
+          "period": 1
+        },
+        {
+          "day": 0,
+          "period": 2
+        },
+        {
+          "day": 1,
+          "period": 0
+        },
+        {
+          "day": 1,
+          "period": 1
+        },
+        {
+          "day": 1,
+          "period": 2
+        },
+        {
+          "day": 2,
+          "period": 0
+        },
+        {
+          "day": 2,
+          "period": 1
+        },
+        {
+          "day": 2,
+          "period": 2
+        },
+        {
+          "day": 3,
+          "period": 0
+        },
+        {
+          "day": 3,
+          "period": 1
+        },
+        {
+          "day": 3,
+          "period": 2
+        },
+        {
+          "day": 4,
+          "period": 0
+        },
+        {
+          "day": 4,
+          "period": 1
+        },
+        {
+          "day": 4,
+          "period": 2
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "CS_FIN_PSY",
+      "name": "CS \u00b7 Finance \u00b7 Psychology",
+      "size": 24,
+      "program": "Undergraduate demonstration",
+      "major": "Computer Science",
+      "minor": "Finance",
+      "mdc": "Psychology",
+      "unavailable": []
+    },
+    {
+      "id": "CS_FIN_ENV",
+      "name": "CS \u00b7 Finance \u00b7 Climate",
+      "size": 18,
+      "program": "Undergraduate demonstration",
+      "major": "Computer Science",
+      "minor": "Finance",
+      "mdc": "Climate Systems",
+      "unavailable": []
+    },
+    {
+      "id": "EC_AI_PSY",
+      "name": "Economics \u00b7 AI \u00b7 Psychology",
+      "size": 20,
+      "program": "Undergraduate demonstration",
+      "major": "Economics",
+      "minor": "Artificial Intelligence",
+      "mdc": "Psychology",
+      "unavailable": []
+    },
+    {
+      "id": "DS_AI_ENV",
+      "name": "Data Science \u00b7 AI \u00b7 Climate",
+      "size": 16,
+      "program": "Undergraduate demonstration",
+      "major": "Data Science",
+      "minor": "Artificial Intelligence",
+      "mdc": "Climate Systems",
+      "unavailable": []
+    }
+  ],
+  "events": [
+    {
+      "id": "CS201_ALL_L_1",
+      "course_id": "CS201",
+      "section_id": "CS201_ALL",
+      "kind": "L",
+      "duration": 1,
+      "faculty_ids": [
+        "F01"
+      ],
+      "group_ids": [
+        "CS_FIN_PSY",
+        "CS_FIN_ENV"
+      ],
+      "room_types": [
+        "LECTURE_HALL",
+        "SEMINAR_ROOM"
+      ],
+      "equipment": [
+        "projector"
+      ],
+      "allowed_starts": [],
+      "basket_id": null,
+      "sync_group": null
+    },
+    {
+      "id": "CS201_ALL_L_2",
+      "course_id": "CS201",
+      "section_id": "CS201_ALL",
+      "kind": "L",
+      "duration": 1,
+      "faculty_ids": [
+        "F01"
+      ],
+      "group_ids": [
+        "CS_FIN_PSY",
+        "CS_FIN_ENV"
+      ],
+      "room_types": [
+        "LECTURE_HALL",
+        "SEMINAR_ROOM"
+      ],
+      "equipment": [
+        "projector"
+      ],
+      "allowed_starts": null,
+      "basket_id": null,
+      "sync_group": null
+    },
+    {
+      "id": "CS201_ALL_L_3",
+      "course_id": "CS201",
+      "section_id": "CS201_ALL",
+      "kind": "L",
+      "duration": 1,
+      "faculty_ids": [
+        "F01"
+      ],
+      "group_ids": [
+        "CS_FIN_PSY",
+        "CS_FIN_ENV"
+      ],
+      "room_types": [
+        "LECTURE_HALL",
+        "SEMINAR_ROOM"
+      ],
+      "equipment": [
+        "projector"
+      ],
+      "allowed_starts": null,
+      "basket_id": null,
+      "sync_group": null
+    },
+    {
+      "id": "CS201_ALL_T_1",
+      "course_id": "CS201",
+      "section_id": "CS201_ALL",
+      "kind": "T",
+      "duration": 1,
+      "faculty_ids": [
+        "F01"
+      ],
+      "group_ids": [
+        "CS_FIN_PSY",
+        "CS_FIN_ENV"
+      ],
+      "room_types": [
+        "LECTURE_HALL",
+        "SEMINAR_ROOM"
+      ],
+      "equipment": [
+        "projector"
+      ],
+      "allowed_starts": null,
+      "basket_id": null,
+      "sync_group": null
+    },
+    {
+      "id": "CS202L_CS_FIN_PSY_P_1",
+      "course_id": "CS202L",
+      "section_id": "CS202L_CS_FIN_PSY",
+      "kind": "P",
+      "duration": 2,
+      "faculty_ids": [
+        "F02"
+      ],
+      "group_ids": [
+        "CS_FIN_PSY"
+      ],
+      "room_types": [
+        "COMPUTER_LAB"
+      ],
+      "equipment": [
+        "computers"
+      ],
+      "allowed_starts": null,
+      "basket_id": null,
+      "sync_group": null
+    },
+    {
+      "id": "CS202L_CS_FIN_ENV_P_1",
+      "course_id": "CS202L",
+      "section_id": "CS202L_CS_FIN_ENV",
+      "kind": "P",
+      "duration": 2,
+      "faculty_ids": [
+        "F02"
+      ],
+      "group_ids": [
+        "CS_FIN_ENV"
+      ],
+      "room_types": [
+        "COMPUTER_LAB"
+      ],
+      "equipment": [
+        "computers"
+      ],
+      "allowed_starts": null,
+      "basket_id": null,
+      "sync_group": null
+    },
+    {
+      "id": "EC201_ALL_L_1",
+      "course_id": "EC201",
+      "section_id": "EC201_ALL",
+      "kind": "L",
+      "duration": 1,
+      "faculty_ids": [
+        "F03"
+      ],
+      "group_ids": [
+        "EC_AI_PSY"
+      ],
+      "room_types": [
+        "LECTURE_HALL",
+        "SEMINAR_ROOM"
+      ],
+      "equipment": [
+        "projector"
+      ],
+      "allowed_starts": null,
+      "basket_id": null,
+      "sync_group": null
+    },
+    {
+      "id": "EC201_ALL_L_2",
+      "course_id": "EC201",
+      "section_id": "EC201_ALL",
+      "kind": "L",
+      "duration": 1,
+      "faculty_ids": [
+        "F03"
+      ],
+      "group_ids": [
+        "EC_AI_PSY"
+      ],
+      "room_types": [
+        "LECTURE_HALL",
+        "SEMINAR_ROOM"
+      ],
+      "equipment": [
+        "projector"
+      ],
+      "allowed_starts": null,
+      "basket_id": null,
+      "sync_group": null
+    },
+    {
+      "id": "EC201_ALL_L_3",
+      "course_id": "EC201",
+      "section_id": "EC201_ALL",
+      "kind": "L",
+      "duration": 1,
+      "faculty_ids": [
+        "F03"
+      ],
+      "group_ids": [
+        "EC_AI_PSY"
+      ],
+      "room_types": [
+        "LECTURE_HALL",
+        "SEMINAR_ROOM"
+      ],
+      "equipment": [
+        "projector"
+      ],
+      "allowed_starts": null,
+      "basket_id": null,
+      "sync_group": null
+    },
+    {
+      "id": "DS201_ALL_L_1",
+      "course_id": "DS201",
+      "section_id": "DS201_ALL",
+      "kind": "L",
+      "duration": 1,
+      "faculty_ids": [
+        "F01"
+      ],
+      "group_ids": [
+        "DS_AI_ENV"
+      ],
+      "room_types": [
+        "LECTURE_HALL",
+        "SEMINAR_ROOM"
+      ],
+      "equipment": [
+        "projector"
+      ],
+      "allowed_starts": null,
+      "basket_id": null,
+      "sync_group": null
+    },
+    {
+      "id": "DS201_ALL_L_2",
+      "course_id": "DS201",
+      "section_id": "DS201_ALL",
+      "kind": "L",
+      "duration": 1,
+      "faculty_ids": [
+        "F01"
+      ],
+      "group_ids": [
+        "DS_AI_ENV"
+      ],
+      "room_types": [
+        "LECTURE_HALL",
+        "SEMINAR_ROOM"
+      ],
+      "equipment": [
+        "projector"
+      ],
+      "allowed_starts": null,
+      "basket_id": null,
+      "sync_group": null
+    },
+    {
+      "id": "DS201_ALL_L_3",
+      "course_id": "DS201",
+      "section_id": "DS201_ALL",
+      "kind": "L",
+      "duration": 1,
+      "faculty_ids": [
+        "F01"
+      ],
+      "group_ids": [
+        "DS_AI_ENV"
+      ],
+      "room_types": [
+        "LECTURE_HALL",
+        "SEMINAR_ROOM"
+      ],
+      "equipment": [
+        "projector"
+      ],
+      "allowed_starts": null,
+      "basket_id": null,
+      "sync_group": null
+    },
+    {
+      "id": "AI_MIN_1_ALL_L_1",
+      "course_id": "AI_MIN_1",
+      "section_id": "AI_MIN_1_ALL",
+      "kind": "L",
+      "duration": 1,
+      "faculty_ids": [
+        "F02"
+      ],
+      "group_ids": [
+        "EC_AI_PSY",
+        "DS_AI_ENV"
+      ],
+      "room_types": [
+        "LECTURE_HALL",
+        "SEMINAR_ROOM"
+      ],
+      "equipment": [
+        "projector"
+      ],
+      "allowed_starts": null,
+      "basket_id": "BASKET_MINOR",
+      "sync_group": "BASKET_MINOR_1"
+    },
+    {
+      "id": "AI_MIN_1_ALL_L_2",
+      "course_id": "AI_MIN_1",
+      "section_id": "AI_MIN_1_ALL",
+      "kind": "L",
+      "duration": 1,
+      "faculty_ids": [
+        "F02"
+      ],
+      "group_ids": [
+        "EC_AI_PSY",
+        "DS_AI_ENV"
+      ],
+      "room_types": [
+        "LECTURE_HALL",
+        "SEMINAR_ROOM"
+      ],
+      "equipment": [
+        "projector"
+      ],
+      "allowed_starts": null,
+      "basket_id": "BASKET_MINOR",
+      "sync_group": "BASKET_MINOR_2"
+    },
+    {
+      "id": "FIN_MIN_1_ALL_L_1",
+      "course_id": "FIN_MIN_1",
+      "section_id": "FIN_MIN_1_ALL",
+      "kind": "L",
+      "duration": 1,
+      "faculty_ids": [
+        "F03"
+      ],
+      "group_ids": [
+        "CS_FIN_PSY",
+        "CS_FIN_ENV"
+      ],
+      "room_types": [
+        "LECTURE_HALL",
+        "SEMINAR_ROOM"
+      ],
+      "equipment": [
+        "projector"
+      ],
+      "allowed_starts": null,
+      "basket_id": "BASKET_MINOR",
+      "sync_group": "BASKET_MINOR_1"
+    },
+    {
+      "id": "FIN_MIN_1_ALL_L_2",
+      "course_id": "FIN_MIN_1",
+      "section_id": "FIN_MIN_1_ALL",
+      "kind": "L",
+      "duration": 1,
+      "faculty_ids": [
+        "F03"
+      ],
+      "group_ids": [
+        "CS_FIN_PSY",
+        "CS_FIN_ENV"
+      ],
+      "room_types": [
+        "LECTURE_HALL",
+        "SEMINAR_ROOM"
+      ],
+      "equipment": [
+        "projector"
+      ],
+      "allowed_starts": null,
+      "basket_id": "BASKET_MINOR",
+      "sync_group": "BASKET_MINOR_2"
+    },
+    {
+      "id": "PSY101_ALL_L_1",
+      "course_id": "PSY101",
+      "section_id": "PSY101_ALL",
+      "kind": "L",
+      "duration": 1,
+      "faculty_ids": [
+        "F04"
+      ],
+      "group_ids": [
+        "CS_FIN_PSY",
+        "EC_AI_PSY"
+      ],
+      "room_types": [
+        "LECTURE_HALL",
+        "SEMINAR_ROOM"
+      ],
+      "equipment": [
+        "projector"
+      ],
+      "allowed_starts": null,
+      "basket_id": "BASKET_MDC_A",
+      "sync_group": "BASKET_MDC_A_1"
+    },
+    {
+      "id": "PSY101_ALL_L_2",
+      "course_id": "PSY101",
+      "section_id": "PSY101_ALL",
+      "kind": "L",
+      "duration": 1,
+      "faculty_ids": [
+        "F04"
+      ],
+      "group_ids": [
+        "CS_FIN_PSY",
+        "EC_AI_PSY"
+      ],
+      "room_types": [
+        "LECTURE_HALL",
+        "SEMINAR_ROOM"
+      ],
+      "equipment": [
+        "projector"
+      ],
+      "allowed_starts": null,
+      "basket_id": "BASKET_MDC_A",
+      "sync_group": "BASKET_MDC_A_2"
+    },
+    {
+      "id": "ENV105_ALL_L_1",
+      "course_id": "ENV105",
+      "section_id": "ENV105_ALL",
+      "kind": "L",
+      "duration": 1,
+      "faculty_ids": [
+        "F05"
+      ],
+      "group_ids": [
+        "CS_FIN_ENV",
+        "DS_AI_ENV"
+      ],
+      "room_types": [
+        "LECTURE_HALL",
+        "SEMINAR_ROOM"
+      ],
+      "equipment": [
+        "projector"
+      ],
+      "allowed_starts": null,
+      "basket_id": "BASKET_MDC_A",
+      "sync_group": "BASKET_MDC_A_1"
+    },
+    {
+      "id": "ENV105_ALL_L_2",
+      "course_id": "ENV105",
+      "section_id": "ENV105_ALL",
+      "kind": "L",
+      "duration": 1,
+      "faculty_ids": [
+        "F05"
+      ],
+      "group_ids": [
+        "CS_FIN_ENV",
+        "DS_AI_ENV"
+      ],
+      "room_types": [
+        "LECTURE_HALL",
+        "SEMINAR_ROOM"
+      ],
+      "equipment": [
+        "projector"
+      ],
+      "allowed_starts": null,
+      "basket_id": "BASKET_MDC_A",
+      "sync_group": "BASKET_MDC_A_2"
+    },
+    {
+      "id": "SEC_WEB_CS_FIN_PSY_P_1",
+      "course_id": "SEC_WEB",
+      "section_id": "SEC_WEB_CS_FIN_PSY",
+      "kind": "P",
+      "duration": 2,
+      "faculty_ids": [
+        "F06"
+      ],
+      "group_ids": [
+        "CS_FIN_PSY"
+      ],
+      "room_types": [
+        "COMPUTER_LAB",
+        "SKILL_STUDIO"
+      ],
+      "equipment": [
+        "computers"
+      ],
+      "allowed_starts": null,
+      "basket_id": null,
+      "sync_group": null
+    },
+    {
+      "id": "SEC_WEB_CS_FIN_ENV_P_1",
+      "course_id": "SEC_WEB",
+      "section_id": "SEC_WEB_CS_FIN_ENV",
+      "kind": "P",
+      "duration": 2,
+      "faculty_ids": [
+        "F06"
+      ],
+      "group_ids": [
+        "CS_FIN_ENV"
+      ],
+      "room_types": [
+        "COMPUTER_LAB",
+        "SKILL_STUDIO"
+      ],
+      "equipment": [
+        "computers"
+      ],
+      "allowed_starts": null,
+      "basket_id": null,
+      "sync_group": null
+    },
+    {
+      "id": "SEC_WEB_EC_AI_PSY_P_1",
+      "course_id": "SEC_WEB",
+      "section_id": "SEC_WEB_EC_AI_PSY",
+      "kind": "P",
+      "duration": 2,
+      "faculty_ids": [
+        "F06"
+      ],
+      "group_ids": [
+        "EC_AI_PSY"
+      ],
+      "room_types": [
+        "COMPUTER_LAB",
+        "SKILL_STUDIO"
+      ],
+      "equipment": [
+        "computers"
+      ],
+      "allowed_starts": null,
+      "basket_id": null,
+      "sync_group": null
+    },
+    {
+      "id": "SEC_WEB_DS_AI_ENV_P_1",
+      "course_id": "SEC_WEB",
+      "section_id": "SEC_WEB_DS_AI_ENV",
+      "kind": "P",
+      "duration": 2,
+      "faculty_ids": [
+        "F06"
+      ],
+      "group_ids": [
+        "DS_AI_ENV"
+      ],
+      "room_types": [
+        "COMPUTER_LAB",
+        "SKILL_STUDIO"
+      ],
+      "equipment": [
+        "computers"
+      ],
+      "allowed_starts": null,
+      "basket_id": null,
+      "sync_group": null
+    },
+    {
+      "id": "AEC_COM_ALL_L_1",
+      "course_id": "AEC_COM",
+      "section_id": "AEC_COM_ALL",
+      "kind": "L",
+      "duration": 1,
+      "faculty_ids": [
+        "F04"
+      ],
+      "group_ids": [
+        "CS_FIN_PSY",
+        "CS_FIN_ENV",
+        "EC_AI_PSY",
+        "DS_AI_ENV"
+      ],
+      "room_types": [
+        "LECTURE_HALL",
+        "SEMINAR_ROOM"
+      ],
+      "equipment": [
+        "projector"
+      ],
+      "allowed_starts": null,
+      "basket_id": null,
+      "sync_group": null
+    },
+    {
+      "id": "AEC_COM_ALL_L_2",
+      "course_id": "AEC_COM",
+      "section_id": "AEC_COM_ALL",
+      "kind": "L",
+      "duration": 1,
+      "faculty_ids": [
+        "F04"
+      ],
+      "group_ids": [
+        "CS_FIN_PSY",
+        "CS_FIN_ENV",
+        "EC_AI_PSY",
+        "DS_AI_ENV"
+      ],
+      "room_types": [
+        "LECTURE_HALL",
+        "SEMINAR_ROOM"
+      ],
+      "equipment": [
+        "projector"
+      ],
+      "allowed_starts": null,
+      "basket_id": null,
+      "sync_group": null
+    },
+    {
+      "id": "VAC_ETH_ALL_L_1",
+      "course_id": "VAC_ETH",
+      "section_id": "VAC_ETH_ALL",
+      "kind": "L",
+      "duration": 1,
+      "faculty_ids": [
+        "F05"
+      ],
+      "group_ids": [
+        "CS_FIN_PSY",
+        "CS_FIN_ENV",
+        "EC_AI_PSY",
+        "DS_AI_ENV"
+      ],
+      "room_types": [
+        "LECTURE_HALL",
+        "SEMINAR_ROOM"
+      ],
+      "equipment": [
+        "projector"
+      ],
+      "allowed_starts": null,
+      "basket_id": null,
+      "sync_group": null
+    },
+    {
+      "id": "VAC_ETH_ALL_L_2",
+      "course_id": "VAC_ETH",
+      "section_id": "VAC_ETH_ALL",
+      "kind": "L",
+      "duration": 1,
+      "faculty_ids": [
+        "F05"
+      ],
+      "group_ids": [
+        "CS_FIN_PSY",
+        "CS_FIN_ENV",
+        "EC_AI_PSY",
+        "DS_AI_ENV"
+      ],
+      "room_types": [
+        "LECTURE_HALL",
+        "SEMINAR_ROOM"
+      ],
+      "equipment": [
+        "projector"
+      ],
+      "allowed_starts": null,
+      "basket_id": null,
+      "sync_group": null
+    },
+    {
+      "id": "INT_RES_ALL_INT_1",
+      "course_id": "INT_RES",
+      "section_id": "INT_RES_ALL",
+      "kind": "INT",
+      "duration": 1,
+      "faculty_ids": [
+        "F06"
+      ],
+      "group_ids": [
+        "CS_FIN_PSY"
+      ],
+      "room_types": [
+        "LECTURE_HALL",
+        "SEMINAR_ROOM"
+      ],
+      "equipment": [
+        "projector"
+      ],
+      "allowed_starts": null,
+      "basket_id": null,
+      "sync_group": null
+    }
+  ],
+  "baskets": [
+    {
+      "id": "BASKET_MINOR",
+      "name": "Cross-department minors",
+      "course_ids": [
+        "AI_MIN_1",
+        "FIN_MIN_1"
+      ],
+      "reserved_groups": [
+        "CS_FIN_PSY",
+        "CS_FIN_ENV",
+        "EC_AI_PSY",
+        "DS_AI_ENV"
+      ],
+      "allowed_starts": [
+        {
+          "day": 1,
+          "period": 1
+        },
+        {
+          "day": 3,
+          "period": 1
+        }
+      ]
+    },
+    {
+      "id": "BASKET_MDC_A",
+      "name": "Multidisciplinary electives",
+      "course_ids": [
+        "PSY101",
+        "ENV105"
+      ],
+      "reserved_groups": [
+        "CS_FIN_PSY",
+        "CS_FIN_ENV",
+        "EC_AI_PSY",
+        "DS_AI_ENV"
+      ],
+      "allowed_starts": [
+        {
+          "day": 0,
+          "period": 3
+        },
+        {
+          "day": 2,
+          "period": 3
+        }
+      ]
+    }
+  ],
+  "policies": {
+    "max_theory_per_day": 1,
+    "min_travel_minutes": 0,
+    "locked": [],
+    "weights": {
+      "preference": 20,
+      "seat_slack": 1,
+      "idle": 3,
+      "travel": 5,
+      "balance": 0
+    },
+    "notes": [
+      "Credits are separate from event contact minutes.",
+      "One practical meeting occupies two uninterrupted 60-minute periods.",
+      "Weekly template; holidays suppress calendar occurrences without automatic makeup.",
+      "Program labels are examples, not a legal compliance determination."
+    ]
+  }
+}

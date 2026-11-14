@@ -1,0 +1,1 @@
+Local-development source export. Site identity, credentials, dependencies, runtime databases and build output are intentionally excluded. Follow README.md to install and run.

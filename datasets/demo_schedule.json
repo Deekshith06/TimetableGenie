@@ -1,0 +1,309 @@
+{
+  "status": "FEASIBLE",
+  "assignments": [
+    {
+      "event_id": "CS201_ALL_L_1",
+      "room_id": "HALL_102",
+      "faculty_id": "F01",
+      "day": 0,
+      "period": 1
+    },
+    {
+      "event_id": "CS201_ALL_L_2",
+      "room_id": "SEM_301",
+      "faculty_id": "F01",
+      "day": 3,
+      "period": 0
+    },
+    {
+      "event_id": "CS201_ALL_L_3",
+      "room_id": "SEM_301",
+      "faculty_id": "F01",
+      "day": 4,
+      "period": 0
+    },
+    {
+      "event_id": "CS201_ALL_T_1",
+      "room_id": "SEM_301",
+      "faculty_id": "F01",
+      "day": 4,
+      "period": 1
+    },
+    {
+      "event_id": "CS202L_CS_FIN_PSY_P_1",
+      "room_id": "COMP_LAB_201",
+      "faculty_id": "F02",
+      "day": 1,
+      "period": 3
+    },
+    {
+      "event_id": "CS202L_CS_FIN_ENV_P_1",
+      "room_id": "COMP_LAB_201",
+      "faculty_id": "F02",
+      "day": 3,
+      "period": 3
+    },
+    {
+      "event_id": "EC201_ALL_L_1",
+      "room_id": "SEM_302",
+      "faculty_id": "F03",
+      "day": 0,
+      "period": 1
+    },
+    {
+      "event_id": "EC201_ALL_L_2",
+      "room_id": "SEM_302",
+      "faculty_id": "F03",
+      "day": 3,
+      "period": 4
+    },
+    {
+      "event_id": "EC201_ALL_L_3",
+      "room_id": "SEM_302",
+      "faculty_id": "F03",
+      "day": 4,
+      "period": 2
+    },
+    {
+      "event_id": "DS201_ALL_L_1",
+      "room_id": "SEM_302",
+      "faculty_id": "F01",
+      "day": 0,
+      "period": 4
+    },
+    {
+      "event_id": "DS201_ALL_L_2",
+      "room_id": "SEM_302",
+      "faculty_id": "F01",
+      "day": 1,
+      "period": 3
+    },
+    {
+      "event_id": "DS201_ALL_L_3",
+      "room_id": "SEM_301",
+      "faculty_id": "F01",
+      "day": 3,
+      "period": 2
+    },
+    {
+      "event_id": "AI_MIN_1_ALL_L_1",
+      "room_id": "SEM_302",
+      "faculty_id": "F02",
+      "day": 1,
+      "period": 1
+    },
+    {
+      "event_id": "AI_MIN_1_ALL_L_2",
+      "room_id": "HALL_102",
+      "faculty_id": "F02",
+      "day": 3,
+      "period": 1
+    },
+    {
+      "event_id": "FIN_MIN_1_ALL_L_1",
+      "room_id": "SEM_301",
+      "faculty_id": "F03",
+      "day": 1,
+      "period": 1
+    },
+    {
+      "event_id": "FIN_MIN_1_ALL_L_2",
+      "room_id": "SEM_301",
+      "faculty_id": "F03",
+      "day": 3,
+      "period": 1
+    },
+    {
+      "event_id": "PSY101_ALL_L_1",
+      "room_id": "HALL_102",
+      "faculty_id": "F04",
+      "day": 2,
+      "period": 3
+    },
+    {
+      "event_id": "PSY101_ALL_L_2",
+      "room_id": "SEM_301",
+      "faculty_id": "F04",
+      "day": 0,
+      "period": 3
+    },
+    {
+      "event_id": "ENV105_ALL_L_1",
+      "room_id": "SEM_302",
+      "faculty_id": "F05",
+      "day": 2,
+      "period": 3
+    },
+    {
+      "event_id": "ENV105_ALL_L_2",
+      "room_id": "SEM_302",
+      "faculty_id": "F05",
+      "day": 0,
+      "period": 3
+    },
+    {
+      "event_id": "SEC_WEB_CS_FIN_PSY_P_1",
+      "room_id": "SKILL_LAB_202",
+      "faculty_id": "F06",
+      "day": 3,
+      "period": 3
+    },
+    {
+      "event_id": "SEC_WEB_CS_FIN_ENV_P_1",
+      "room_id": "SKILL_LAB_202",
+      "faculty_id": "F06",
+      "day": 1,
+      "period": 3
+    },
+    {
+      "event_id": "SEC_WEB_EC_AI_PSY_P_1",
+      "room_id": "SKILL_LAB_202",
+      "faculty_id": "F06",
+      "day": 4,
+      "period": 0
+    },
+    {
+      "event_id": "SEC_WEB_DS_AI_ENV_P_1",
+      "room_id": "COMP_LAB_201",
+      "faculty_id": "F06",
+      "day": 0,
+      "period": 1
+    },
+    {
+      "event_id": "AEC_COM_ALL_L_1",
+      "room_id": "HALL_101",
+      "faculty_id": "F04",
+      "day": 2,
+      "period": 0
+    },
+    {
+      "event_id": "AEC_COM_ALL_L_2",
+      "room_id": "HALL_101",
+      "faculty_id": "F04",
+      "day": 4,
+      "period": 3
+    },
+    {
+      "event_id": "VAC_ETH_ALL_L_1",
+      "room_id": "HALL_101",
+      "faculty_id": "F05",
+      "day": 0,
+      "period": 0
+    },
+    {
+      "event_id": "VAC_ETH_ALL_L_2",
+      "room_id": "HALL_101",
+      "faculty_id": "F05",
+      "day": 2,
+      "period": 1
+    },
+    {
+      "event_id": "INT_RES_ALL_INT_1",
+      "room_id": "SEM_302",
+      "faculty_id": "F06",
+      "day": 3,
+      "period": 2
+    }
+  ],
+  "engine": "OR-Tools CP-SAT 9.15.6755",
+  "elapsed_ms": 2097,
+  "branches": 77916,
+  "objective": 302,
+  "best_bound": -363.0,
+  "optimal": false,
+  "diagnostics": [],
+  "audit": {
+    "schema_version": "1.0",
+    "checker_version": "python-independent-1.0",
+    "status": "PASS",
+    "complete": true,
+    "total_violations": 0,
+    "rules": [
+      {
+        "id": "H1",
+        "label": "Session fulfillment",
+        "status": "PASS",
+        "violations": 0
+      },
+      {
+        "id": "H2",
+        "label": "Room exclusivity",
+        "status": "PASS",
+        "violations": 0
+      },
+      {
+        "id": "H3",
+        "label": "Faculty exclusivity",
+        "status": "PASS",
+        "violations": 0
+      },
+      {
+        "id": "H4",
+        "label": "Student pathway conflicts",
+        "status": "PASS",
+        "violations": 0
+      },
+      {
+        "id": "H5",
+        "label": "Elective synchronization",
+        "status": "PASS",
+        "violations": 0
+      },
+      {
+        "id": "H6",
+        "label": "Contiguous practical blocks",
+        "status": "PASS",
+        "violations": 0
+      },
+      {
+        "id": "H7",
+        "label": "Room capacity",
+        "status": "PASS",
+        "violations": 0
+      },
+      {
+        "id": "H8",
+        "label": "Equipment & qualifications",
+        "status": "PASS",
+        "violations": 0
+      },
+      {
+        "id": "H9",
+        "label": "Availability & calendar",
+        "status": "PASS",
+        "violations": 0
+      },
+      {
+        "id": "H10",
+        "label": "Faculty workload",
+        "status": "PASS",
+        "violations": 0
+      },
+      {
+        "id": "H11",
+        "label": "Theory spread",
+        "status": "PASS",
+        "violations": 0
+      },
+      {
+        "id": "H12",
+        "label": "Building travel time",
+        "status": "NOT_APPLICABLE",
+        "violations": 0
+      },
+      {
+        "id": "H13",
+        "label": "Locked assignments",
+        "status": "NOT_APPLICABLE",
+        "violations": 0
+      }
+    ],
+    "violations": [],
+    "problem_digest": "af33b61ea140a1e33f3ae0b2cfeb6e5169bf279b631c4316e98da93ac68cd8a8",
+    "schedule_digest": "9a2c961799cc9ef37f97b2955d0596d2f02e9b6be35062b2e1ef1941548a1d69",
+    "payload_digest": "b2bebcc4e495cd75356cdb4eab5bc3e98070283828c03cf0799970885fe1c98e",
+    "issued_at": "2026-10-29T19:43:52.410644+00:00",
+    "signature_status": "Unsigned integrity digest; independently recomputable"
+  },
+  "sample": true
+}

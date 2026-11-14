@@ -1,0 +1,32 @@
+[
+  {
+    "id": "FYUGP",
+    "description": "Configuration example requiring institution-specific policy review",
+    "credit_contact_policy": "Explicit meetings and minutes; no universal credit conversion",
+    "source_status": "Not a certified regulatory profile"
+  },
+  {
+    "id": "BTECH",
+    "description": "Configuration example requiring institution-specific policy review",
+    "credit_contact_policy": "Explicit meetings and minutes; no universal credit conversion",
+    "source_status": "Not a certified regulatory profile"
+  },
+  {
+    "id": "ITEP",
+    "description": "Configuration example requiring institution-specific policy review",
+    "credit_contact_policy": "Explicit meetings and minutes; no universal credit conversion",
+    "source_status": "Not a certified regulatory profile"
+  },
+  {
+    "id": "BED",
+    "description": "Configuration example requiring institution-specific policy review",
+    "credit_contact_policy": "Explicit meetings and minutes; no universal credit conversion",
+    "source_status": "Not a certified regulatory profile"
+  },
+  {
+    "id": "MED",
+    "description": "Configuration example requiring institution-specific policy review",
+    "credit_contact_policy": "Explicit meetings and minutes; no universal credit conversion",
+    "source_status": "Not a certified regulatory profile"
+  }
+]
